@@ -199,6 +199,8 @@ a { color: var(--blue); }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 50;
 }
 .brand {
   font-family: var(--display);
@@ -245,15 +247,23 @@ a { color: var(--blue); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   border-radius: 999px;
   border: 1.5px solid var(--toggle-btn-border);
   background: var(--toggle-btn-bg);
   color: var(--ink);
   cursor: pointer;
+  position: relative;
+  z-index: 51;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
   transition: transform .15s ease, background-color .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.theme-toggle * {
+  pointer-events: none;
 }
 .theme-toggle:hover {
   background: var(--toggle-btn-hover);
@@ -261,11 +271,12 @@ a { color: var(--blue); }
   transform: scale(1.05);
 }
 .theme-toggle:active {
-  transform: scale(0.95);
+  transform: scale(0.92);
 }
 .theme-icon {
-  width: 18px;
-  height: 18px;
+  width: 19px;
+  height: 19px;
+  pointer-events: none;
   transition: transform .2s ease, opacity .2s ease;
 }
 
