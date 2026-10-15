@@ -161,6 +161,7 @@ const PROJECTS = [
     points: ["Navbar dengan dropdown, halaman promo, dan interaksi JavaScript."],
     tech: ["HTML", "Bootstrap 5", "JavaScript"],
     link: { href: "https://github.com/E6nola/portal-bansos-sembako", label: "Lihat kode di GitHub" },
+    demo: { href: "https://e6nola.github.io/portal-bansos-sembako/", label: "Buka Live Demo" },
   },
   {
     area: "bisnis",
@@ -276,6 +277,7 @@ function renderProject(p) {
     list(p.points, "points"),
     list(p.tech, "chips"),
     p.link ? el("a", { class: "link", href: p.link.href, target: "_blank", rel: "noopener", text: p.link.label }) : null,
+    p.demo ? el("a", { class: "link", href: p.demo.href, target: "_blank", rel: "noopener", text: " · " + p.demo.label }) : null,
   ]);
 
   return el("details", { class: "project", "data-area": p.area }, [
