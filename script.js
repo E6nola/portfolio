@@ -351,3 +351,474 @@ try {
   });
 } catch (e) {}
 
+const CERTIFICATES = [
+  {
+    "title": "Data Mining Specialization",
+    "issuer": "University of Illinois Urbana-Champaign",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/0LZVXCBNAD1B",
+    "type": "Spesialisasi",
+    "category": "data"
+  },
+  {
+    "title": "Google Data Analytics Professional Certificate",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/U385LP27KU2J",
+    "type": "Spesialisasi",
+    "category": "data"
+  },
+  {
+    "title": "Enterprise Data Integration, Governance and Architecture Specialization",
+    "issuer": "SkillUp",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/1VFNQXVD057R",
+    "type": "Spesialisasi",
+    "category": "enterprise"
+  },
+  {
+    "title": "CISA: Certified Information Systems Auditor Specialization",
+    "issuer": "Packt",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/1Q4Q9UW3MP6U",
+    "type": "Spesialisasi",
+    "category": "keamanan"
+  },
+  {
+    "title": "Certified Information Systems Security Professional (CISSP) Specialization",
+    "issuer": "Infosec",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/UNOF3GNI1BRN",
+    "type": "Spesialisasi",
+    "category": "keamanan"
+  },
+  {
+    "title": "Text Mining and Analytics",
+    "issuer": "University of Illinois Urbana-Champaign",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/60XAG09I8XCC",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Assess for Success: Marketing Analytics and Measurement",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/VMH6WOVHDQ46",
+    "type": "Kursus",
+    "category": "marketing"
+  },
+  {
+    "title": "Python for Data Science, AI & Development",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/VHZ0ISNR1UOX",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Business Intelligence (BI) Essentials",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/ICV4EXMVEVWO",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Generative AI: Elevate your Business Intelligence Career",
+    "issuer": "SkillUp",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/EBRCT2V04RT1",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Think Outside the Inbox: Email Marketing",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/X68C89Z4BLGH",
+    "type": "Kursus",
+    "category": "marketing"
+  },
+  {
+    "title": "Satisfaction Guaranteed: Develop Customer Loyalty Online",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/87N3T1TEBS74",
+    "type": "Kursus",
+    "category": "marketing"
+  },
+  {
+    "title": "From Likes to Leads: Interact with Customers Online",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/WQXGRA4KA9H4",
+    "type": "Kursus",
+    "category": "marketing"
+  },
+  {
+    "title": "Attract and Engage Customers with Digital Marketing",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/LB9PNP6YI8ZK",
+    "type": "Kursus",
+    "category": "marketing"
+  },
+  {
+    "title": "SQL: A Practical Introduction for Querying Databases",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/ECUUZFQ5FUPH",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Foundations of Digital Marketing and E-commerce",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/X10B3Q88SHYM",
+    "type": "Kursus",
+    "category": "marketing"
+  },
+  {
+    "title": "CISSP Domain 2: Asset Security",
+    "issuer": "Infosec",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/TRG4DYUSAN8S",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "CISSP Domain 7: Security Operations",
+    "issuer": "Infosec",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/1MNKNZJ3QNU9",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "Data Mining Project",
+    "issuer": "University of Illinois Urbana-Champaign",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/EM7VVTLBTWYJ",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Accelerate Your Job Search with AI",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/YZFZK8OUEYVH",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Google Data Analytics Capstone: Complete a Case Study",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/1R3I6XU8PEMD",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Enterprise Data Architecture and Operations",
+    "issuer": "SkillUp",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/2FU2NZ00YZA8",
+    "type": "Kursus",
+    "category": "enterprise"
+  },
+  {
+    "title": "Prepare Data for Exploration",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/ZWNLG215SUAL",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Analyze Data to Answer Questions",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/Q2LQDYV4I8YV",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Share Data Through the Art of Visualization",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/SJV86VNSSG5Y",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Process Data from Dirty to Clean",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/DS6G4L7GE4J7",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Introduction to Data Analysis Using Python",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/X73AVT1CDVG5",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Protection of Information Assets",
+    "issuer": "Packt",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/OEZII0JZCVRB",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "Information Systems Operations and Business Resiliency",
+    "issuer": "Packt",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/6NILO7J4PX6O",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "Systems Acquisition, Development and Implementation",
+    "issuer": "Packt",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/ESQE297LBP6M",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "Ask Questions to Make Data-Driven Decisions",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/9A0WBBY2ZMEK",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Text Retrieval and Search Engines",
+    "issuer": "University of Illinois Urbana-Champaign",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/YGVGO7KIHX6A",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Governance and Management of IT",
+    "issuer": "Packt",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/70JBSI3X3WGP",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "Information Systems Auditing and Governance",
+    "issuer": "Packt",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/RDOAUE2FBFM4",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "CISSP Domain 8: Software development security",
+    "issuer": "Infosec",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/OP07HTML7FGT",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "CISSP Domain 6: Security Assessment and Testing",
+    "issuer": "Infosec",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/7WK887IAWLDZ",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "CISSP Domain 5: Identity and Access Management (IAM)",
+    "issuer": "Infosec",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/OEOPWU82QIXJ",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "CISSP Domain 4: Communication and Network Security",
+    "issuer": "Infosec",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/ASQ98TXZQ6MI",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "CISSP Domain 3: Security Architecture and Engineering",
+    "issuer": "Infosec",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/EJBIH64RCSMN",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "CISSP Domain 1: Security and Risk Management",
+    "issuer": "Infosec",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/QNV3ID685DF4",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "Cluster Analysis in Data Mining",
+    "issuer": "University of Illinois Urbana-Champaign",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/MA5UEC4B64C4",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Pattern Discovery in Data Mining",
+    "issuer": "University of Illinois Urbana-Champaign",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/1AO1OZXSOZ8Y",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Data Visualization",
+    "issuer": "University of Illinois Urbana-Champaign",
+    "date": "September 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/XJXVKTZUX470",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Data Privacy, Security, Governance, Risk and Compliance",
+    "issuer": "SkillUp",
+    "date": "September 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/5KJAMF5Q5UW3",
+    "type": "Kursus",
+    "category": "keamanan"
+  },
+  {
+    "title": "Foundations: Data, Data, Everywhere",
+    "issuer": "Google",
+    "date": "April 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/FA5MULWTI470",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "TOGAF 10 Foundation",
+    "issuer": "EDUCBA",
+    "date": "April 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/P77UVPVWDDX5",
+    "type": "Kursus",
+    "category": "enterprise"
+  },
+  {
+    "title": "Data Integration, Data Storage, & Data Migration",
+    "issuer": "SkillUp",
+    "date": "April 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/JPRZ3DA4TXWX",
+    "type": "Kursus",
+    "category": "enterprise"
+  },
+  {
+    "title": "Enterprise Systems",
+    "issuer": "University of Minnesota",
+    "date": "April 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/QBVX0GYS0H0O",
+    "type": "Kursus",
+    "category": "enterprise"
+  }
+];
+// ---------- sertifikasi render ----------
+const specListEl = document.getElementById("spec-list");
+const certListEl = document.getElementById("cert-list");
+const certFilterBtns = document.querySelectorAll(".cert-filters button");
+const certStatusEl = document.querySelector(".cert-filter-status");
+
+const CERT_CATEGORY_LABEL = {
+  semua: "Semua",
+  spesialisasi: "Spesialisasi Profesional",
+  data: "Data & AI",
+  keamanan: "Keamanan Siber & Audit SI",
+  enterprise: "Arsitektur Enterprise",
+  marketing: "Pemasaran Digital",
+};
+
+function renderSpecCard(c) {
+  return el("article", { class: "spec-card" }, [
+    el("div", { class: "spec-card-top" }, [
+      el("span", { class: "spec-badge", text: "★ Spesialisasi Profesional" }),
+      el("h4", { text: c.title }),
+      el("p", { class: "meta", text: `${c.issuer} · ${c.date}` }),
+    ]),
+    el("a", {
+      class: "cert-link",
+      href: c.url,
+      target: "_blank",
+      rel: "noopener",
+      text: "Verifikasi Kredensial Resmi ↗",
+    }),
+  ]);
+}
+
+function renderCertCard(c) {
+  const isSpec = c.type === "Spesialisasi";
+  return el(
+    "article",
+    {
+      class: "cert-card",
+      "data-cat": c.category,
+      "data-type": isSpec ? "spesialisasi" : "kursus",
+    },
+    [
+      el("div", { class: "cert-card-header" }, [
+        el("span", { class: "cert-type", text: `${c.type} · ${c.issuer}` }),
+        el("h4", { text: c.title }),
+      ]),
+      el("div", { class: "cert-footer" }, [
+        el("span", { text: c.date }),
+        el("a", { class: "cert-link", href: c.url, target: "_blank", rel: "noopener", text: "Verifikasi ↗" }),
+      ]),
+    ]
+  );
+}
+
+if (specListEl && certListEl) {
+  const specs = CERTIFICATES.filter((c) => c.type === "Spesialisasi");
+  specListEl.append(...specs.map(renderSpecCard));
+
+  certListEl.append(...CERTIFICATES.map(renderCertCard));
+
+  function applyCertFilter(cat) {
+    certFilterBtns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.certFilter === cat)));
+    let shown = 0;
+    certListEl.querySelectorAll(".cert-card").forEach((card) => {
+      let show = false;
+      if (cat === "semua") show = true;
+      else if (cat === "spesialisasi") show = card.dataset.type === "spesialisasi";
+      else show = card.dataset.cat === cat;
+      card.hidden = !show;
+      card.style.display = show ? "" : "none";
+      if (show) shown++;
+    });
+    if (certStatusEl) {
+      certStatusEl.textContent =
+        cat === "semua"
+          ? `Menampilkan seluruh ${shown} sertifikat Coursera.`
+          : `Menampilkan ${shown} sertifikat kategori ${CERT_CATEGORY_LABEL[cat] || cat}.`;
+    }
+  }
+
+  certFilterBtns.forEach((b) =>
+    b.addEventListener("click", () => applyCertFilter(b.dataset.certFilter))
+  );
+  applyCertFilter("semua");
+}

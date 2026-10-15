@@ -151,6 +151,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
@@ -761,6 +762,192 @@ a { color: var(--blue); }
   transition: border-color .25s ease, color .25s ease;
 }
 .footer p { margin: 0; }
+
+/* ---------- sertifikasi ---------- */
+.certs-section {
+  display: flex;
+  flex-direction: column;
+}
+.spec-block {
+  margin-bottom: 40px;
+}
+.spec-heading {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 16px;
+}
+.spec-card {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease, background-color .25s ease;
+}
+.spec-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+.spec-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.spec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .78rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: var(--status-text);
+  border: 1px solid var(--status-border);
+  width: fit-content;
+}
+.spec-card h4 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.18rem;
+  line-height: 1.25;
+  margin: 0;
+  color: var(--ink);
+}
+.spec-card .meta {
+  font-size: .88rem;
+  color: var(--muted);
+  margin: 0;
+}
+.spec-card .cert-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--blue);
+  text-decoration: none;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  transition: color .15s ease;
+}
+.spec-card .cert-link:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.all-certs-block {
+  margin-top: 16px;
+}
+.certs-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.cert-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.cert-filters button {
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 500;
+  padding: 7px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease, transform .1s ease;
+}
+.cert-filters button:hover {
+  background: var(--surface);
+  border-color: var(--blue);
+}
+.cert-filters button[aria-pressed="true"] {
+  background: var(--blue);
+  color: #FFFFFF;
+  border-color: var(--blue);
+}
+.cert-filter-status {
+  color: var(--muted);
+  font-size: .92rem;
+  margin: 8px 0 20px;
+  min-height: 1.4em;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 12px;
+}
+.cert-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  transition: border-color .15s ease, background-color .25s ease, transform .15s ease;
+}
+.cert-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-2px);
+}
+.cert-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cert-card .cert-type {
+  font-size: .75rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.cert-card h4 {
+  font-family: var(--display);
+  font-size: .98rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--ink);
+}
+.cert-card .cert-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .8rem;
+  color: var(--muted);
+  padding-top: 8px;
+  border-top: 1px dashed var(--line);
+}
+.cert-card .cert-link {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+.cert-card .cert-link:hover {
+  text-decoration: underline;
+}
 
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
