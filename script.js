@@ -88,7 +88,7 @@ const PROJECTS = [
       "Pinjam buku: status, peminjam, dan waktu pinjam tercatat di database.",
     ],
     tech: ["PHP 8", "MariaDB", "MVC", "Upload gambar"],
-    link: { href: "https://github.com/sultanhz2006/UTSPWL", label: "Lihat kode di GitHub" },
+    link: { href: "https://github.com/E6nola/perpustakaan-mvc-php", label: "Lihat kode di GitHub" },
     images: [{ src: "assets/buku-cover.jpg", alt: "Contoh sampul buku pada aplikasi", caption: "Data contoh sampul" }],
   },
   {
@@ -103,7 +103,7 @@ const PROJECTS = [
       "Query memakai prepared statement untuk mencegah SQL injection.",
     ],
     tech: ["PHP", "MySQL", "Prepared statement", "CSS"],
-    link: { href: "https://github.com/sultanhz2006/PWL", label: "Lihat kode di GitHub" },
+    link: { href: "https://github.com/E6nola/inventaris-atk-php", label: "Lihat kode di GitHub" },
   },
   {
     area: "web",
@@ -117,7 +117,7 @@ const PROJECTS = [
       "Pustaka dikelola dengan Composer.",
     ],
     tech: ["PHP", "AJAX", "MVC", "Composer", "PhpSpreadsheet", "Dompdf"],
-    link: { href: "https://github.com/sultanhz2006/pwl-minggu-9", label: "Lihat kode di GitHub" },
+    link: { href: "https://github.com/E6nola/mahasiswa-crud-livesearch", label: "Lihat kode di GitHub" },
   },
   {
     area: "web",
@@ -130,7 +130,7 @@ const PROJECTS = [
       "Tambah, ubah, hapus data dengan upload gambar.",
     ],
     tech: ["PHP", "MySQL", "Git"],
-    link: { href: "https://github.com/sultanhz2006/project-sem4-week1-2", label: "Lihat kode di GitHub" },
+    link: { href: "https://github.com/E6nola/crud-inventaris-dasar", label: "Lihat kode di GitHub" },
   },
   {
     area: "web",
@@ -140,7 +140,7 @@ const PROJECTS = [
     context: "Tugas minggu 10 Pemrograman Web Lanjut.",
     points: ["Pengguna memilih kota asal, kota tujuan, berat, dan kurir, lalu melihat tarif."],
     tech: ["PHP", "REST API", "RajaOngkir"],
-    link: { href: "https://github.com/sultanhz2006/pwl-minggu-10", label: "Lihat kode di GitHub" },
+    link: { href: "https://github.com/E6nola/cek-ongkir-rajaongkir", label: "Lihat kode di GitHub" },
   },
   {
     area: "web",
@@ -150,7 +150,7 @@ const PROJECTS = [
     context: "Proyek UAS Pemrograman Web Dasar.",
     points: ["Login dengan sesi PHP.", "Tambah, ubah, hapus tugas dengan tenggat dan status."],
     tech: ["PHP", "MySQL", "CSS"],
-    link: { href: "https://github.com/sultanhz2006/UAS-PWD", label: "Lihat kode di GitHub" },
+    link: { href: "https://github.com/E6nola/manajemen-tugas-kuliah", label: "Lihat kode di GitHub" },
   },
   {
     area: "web",
@@ -160,7 +160,7 @@ const PROJECTS = [
     context: "Proyek UTS Pemrograman Web Dasar.",
     points: ["Navbar dengan dropdown, halaman promo, dan interaksi JavaScript."],
     tech: ["HTML", "Bootstrap 5", "JavaScript"],
-    link: { href: "https://github.com/sultanhz2006/UTS_A12.2024.07163", label: "Lihat kode di GitHub" },
+    link: { href: "https://github.com/E6nola/portal-bansos-sembako", label: "Lihat kode di GitHub" },
   },
   {
     area: "bisnis",
