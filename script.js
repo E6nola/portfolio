@@ -337,3 +337,48 @@ entities.forEach((e) => {
     document.getElementById("proyek").scrollIntoView();
   });
 });
+
+// ---------- theme toggle ----------
+const themeToggleBtn = document.getElementById("theme-toggle");
+
+function getEffectiveTheme() {
+  const current = document.documentElement.getAttribute("data-theme");
+  if (current) return current;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function updateThemeToggleLabel(theme) {
+  if (!themeToggleBtn) return;
+  const isDark = theme === "dark";
+  const label = isDark ? "Ganti ke mode terang" : "Ganti ke mode gelap";
+  themeToggleBtn.setAttribute("aria-label", label);
+  themeToggleBtn.setAttribute("title", label);
+}
+
+function setTheme(theme, save = true) {
+  document.documentElement.setAttribute("data-theme", theme);
+  if (save) {
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {}
+  }
+  updateThemeToggleLabel(theme);
+}
+
+if (themeToggleBtn) {
+  updateThemeToggleLabel(getEffectiveTheme());
+
+  themeToggleBtn.addEventListener("click", () => {
+    const current = getEffectiveTheme();
+    const next = current === "dark" ? "light" : "dark";
+    setTheme(next, true);
+  });
+}
+
+try {
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    if (!localStorage.getItem("theme")) {
+      setTheme(e.matches ? "dark" : "light", false);
+    }
+  });
+} catch (e) {}
