@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sultan Hafidz | Portofolio Sistem Informasi UDINUS</title>
+  <meta name="description" content="Portofolio Muhammad Sultan Hafidz Herawan, mahasiswa S1 Sistem Informasi Universitas Dian Nuswantoro. Analisis sistem, pengembangan web, otomasi, dan proses bisnis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#isi">Langsung ke isi</a>
+
+  <header class="topbar">
+    <a class="brand" href="#">Sultan Hafidz</a>
+    <nav aria-label="Navigasi utama">
+      <a href="#keahlian">Keahlian</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <main id="isi">
+    <!-- HERO: diagram konteks (gaya DFD) -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Saya merancang sistem dari proses bisnisnya, lalu membangunnya sampai bisa dipakai.</h1>
+        <p class="lead">
+          Muhammad Sultan Hafidz Herawan, mahasiswa S1 Sistem Informasi di
+          Universitas Dian Nuswantoro (UDINUS), Semarang. Sekarang di semester 5.
+        </p>
+        <p class="hint">Diagram di samping adalah peta bidang saya. Pilih satu kotak untuk melihat proyeknya.</p>
+      </div>
+
+      <figure class="ctx" aria-label="Diagram konteks bidang keahlian">
+        <svg class="ctx-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <line data-area="analisis" x1="24" y1="20" x2="50" y2="50"/>
+          <line data-area="web"      x1="76" y1="20" x2="50" y2="50"/>
+          <line data-area="bisnis"   x1="24" y1="80" x2="50" y2="50"/>
+          <line data-area="otomasi"  x1="76" y1="80" x2="50" y2="50"/>
+        </svg>
+
+        <button class="entity e-analisis" data-area="analisis" type="button">
+          <span class="entity-name">Analisis &amp; perancangan SI</span>
+          <span class="entity-count" data-count="analisis"></span>
+        </button>
+        <button class="entity e-web" data-area="web" type="button">
+          <span class="entity-name">Pengembangan web</span>
+          <span class="entity-count" data-count="web"></span>
+        </button>
+        <button class="entity e-bisnis" data-area="bisnis" type="button">
+          <span class="entity-name">Proses bisnis &amp; data</span>
+          <span class="entity-count" data-count="bisnis"></span>
+        </button>
+        <button class="entity e-otomasi" data-area="otomasi" type="button">
+          <span class="entity-name">Otomasi &amp; AI</span>
+          <span class="entity-count" data-count="otomasi"></span>
+        </button>
+
+        <span class="flow f-analisis" aria-hidden="true">kebutuhan pengguna</span>
+        <span class="flow f-web" aria-hidden="true">PHP + MySQL</span>
+        <span class="flow f-bisnis" aria-hidden="true">alur ERP &amp; data</span>
+        <span class="flow f-otomasi" aria-hidden="true">skrip Python</span>
+
+        <div class="process" aria-hidden="true">
+          <span class="process-id">0</span>
+          <span class="process-name">Sultan Hafidz</span>
+          <span class="process-sub">S1 Sistem Informasi</span>
+        </div>
+        <figcaption class="sr-only">Satu proses pusat, Sultan Hafidz, terhubung ke empat bidang: analisis dan perancangan sistem informasi, pengembangan web, proses bisnis dan data, serta otomasi dan AI.</figcaption>
+      </figure>
+    </section>
+
+    <!-- KEAHLIAN -->
+    <section id="keahlian" class="section">
+      <div class="section-head">
+        <h2>Keahlian</h2>
+        <p>Keahlian ini saya dapat dari tugas kuliah dan proyek sendiri. Setiap bidang punya bukti di daftar proyek.</p>
+      </div>
+
+      <div class="skills">
+        <article class="skill" data-area="analisis">
+          <h3>Analisis &amp; perancangan SI</h3>
+          <p>Saya memetakan proses bisnis yang berjalan, mencari masalahnya, lalu membuat rancangan sistem usulan.</p>
+          <ul class="chips">
+            <li>Proses bisnis as-is / to-be</li><li>Diagram fishbone</li><li>Diagram konteks &amp; DFD</li>
+            <li>Use case &amp; activity diagram</li><li>Tabel relasi</li><li>Desain input / output</li>
+            <li>Design thinking</li><li>Evaluasi UI</li><li>Test case &amp; white box</li>
+          </ul>
+          <p class="courses">Mata kuliah: APSI Terstruktur, APSI Berorientasi Objek, IMK, PSSI, Implementasi &amp; Pengujian Sistem.</p>
+        </article>
+
+        <article class="skill" data-area="web">
+          <h3>Pengembangan web</h3>
+          <p>Saya membuat aplikasi web dengan PHP dan MySQL, dari CRUD sederhana sampai pola MVC dengan router sendiri.</p>
+          <ul class="chips">
+            <li>PHP 8</li><li>MySQL / MariaDB</li><li>Pola MVC</li><li>Login &amp; sesi</li>
+            <li>Upload &amp; thumbnail</li><li>AJAX live search</li><li>Export Excel &amp; PDF</li>
+            <li>HTML &amp; CSS</li><li>Bootstrap 5</li><li>JavaScript</li><li>Composer</li><li>Git &amp; GitHub</li>
+          </ul>
+          <p class="courses">Mata kuliah: Pemrograman Web Dasar, Pemrograman Web Lanjut, Algoritma &amp; Pemrograman (C/C++).</p>
+        </article>
+
+        <article class="skill" data-area="bisnis">
+          <h3>Proses bisnis &amp; data</h3>
+          <p>Saya mempelajari cara sistem mendukung bisnis: ERP, akuntansi, tata kelola TI, jaringan, dan pengolahan data.</p>
+          <ul class="chips">
+            <li>ERP &amp; MRP</li><li>Diagram REA</li><li>Audit SI</li><li>PDCA &amp; ITSM</li>
+            <li>Transformasi digital</li><li>Subnetting VLSM</li><li>Model OSI</li><li>CRISP-DM</li>
+            <li>Regresi, Decision Tree, KNN</li><li>K-Means &amp; Apriori</li>
+          </ul>
+          <p class="courses">Mata kuliah: Perencanaan Sumber Daya Perusahaan, SIA, Audit SI, Tata Kelola TI, Infrastruktur TI, Keamanan SI, Penambangan Data, SPK.</p>
+        </article>
+
+        <article class="skill" data-area="otomasi">
+          <h3>Otomasi &amp; AI</h3>
+          <p>Saya menulis skrip Python yang mengambil pekerjaan berulang dari tangan saya, dan menghubungkannya dengan agen AI.</p>
+          <ul class="chips">
+            <li>Python</li><li>Playwright</li><li>REST API</li><li>Bot Discord</li>
+            <li>Ekstraksi teks PDF / PPTX / DOCX</li><li>Enkripsi Windows DPAPI</li><li>Agen AI</li>
+          </ul>
+          <p class="courses">Mata kuliah: Kecerdasan Buatan, Sistem Pendukung Keputusan.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROYEK -->
+    <section id="proyek" class="section">
+      <div class="section-head">
+        <h2>Proyek</h2>
+        <p>Proyek pribadi dan tugas kuliah yang paling mewakili cara kerja saya.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Saring proyek per bidang">
+        <button type="button" data-filter="semua" aria-pressed="true">Semua</button>
+        <button type="button" data-filter="analisis" aria-pressed="false">Analisis &amp; perancangan</button>
+        <button type="button" data-filter="web" aria-pressed="false">Web</button>
+        <button type="button" data-filter="bisnis" aria-pressed="false">Bisnis &amp; data</button>
+        <button type="button" data-filter="otomasi" aria-pressed="false">Otomasi &amp; AI</button>
+      </div>
+      <p class="filter-status" aria-live="polite"></p>
+
+      <div id="project-list" class="projects"></div>
+    </section>
+
+    <!-- PENDIDIKAN -->
+    <section class="section edu">
+      <div class="section-head">
+        <h2>Pendidikan</h2>
+      </div>
+      <div class="edu-body">
+        <div>
+          <h3>Universitas Dian Nuswantoro</h3>
+          <p>S1 Sistem Informasi, Fakultas Ilmu Komputer. Masuk 2024, sekarang semester 5.</p>
+        </div>
+        <p class="edu-now">
+          Semester ini: Audit SI, Keamanan SI, Kecerdasan Buatan, Penambangan Data,
+          Sistem Pendukung Keputusan, Implementasi &amp; Pengujian Sistem, dan Sistem Informasi Akuntansi.
+        </p>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="section contact">
+      <h2>Mari bekerja sama</h2>
+      <p>Saya terbuka untuk magang, proyek kampus, dan kerja lepas di bidang sistem informasi atau web.</p>
+      <div class="contact-links">
+        <a class="btn" href="https://github.com/sultanhz2006" target="_blank" rel="noopener">Buka GitHub saya</a>
+        <!-- Tambahkan kontak lain di sini, contoh:
+        <a class="btn btn-ghost" href="mailto:email@kamu.com">Kirim email</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/username" target="_blank" rel="noopener">LinkedIn</a>
+        -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Muhammad Sultan Hafidz Herawan</p>
+    <p>Sistem Informasi, UDINUS Semarang</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
