@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261016-v3">
+  <link rel="stylesheet" href="styles.css?v=20261016-v4">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script>
     function getStoredTheme() {
@@ -249,7 +249,19 @@
         </div>
         <p class="cert-filter-status" aria-live="polite"></p>
 
-        <div id="cert-list" class="cert-grid"></div>
+        <div id="cert-grid-wrapper" class="cert-grid-wrapper is-collapsed">
+          <div id="cert-list" class="cert-grid"></div>
+          <div class="cert-grid-fade" aria-hidden="true"></div>
+        </div>
+
+        <div class="cert-more-action">
+          <button id="cert-toggle-more" class="cert-more-btn" type="button" aria-expanded="false">
+            <span class="cert-more-text">Tampilkan Semua 48 Sertifikat</span>
+            <svg class="cert-more-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -281,32 +293,34 @@
         <article class="about-card">
           <div class="about-card-head">
             <span class="about-badge">Eksplorasi Teknologi</span>
-            <h3>Hardware &amp; AI Enthusiast</h3>
+            <h3>Hardware, Silikon &amp; AI Workloads</h3>
           </div>
           <p>
-            Mengikuti ekosistem komputasi dan perakitan PC sejak 2019, mulai dari spesifikasi arsitektur hardware, evolusi semikonduktor, hingga perkembangan akselerasi komputasi modern. Mengintegrasikan teknologi kecerdasan buatan (AI) secara aktif ke alur kerja harian untuk riset, otomasi, dan efisiensi kerja.
+            Mengikuti ekosistem semikonduktor modern (NVIDIA, AMD, Intel, Snapdragon, MediaTek) sejak era rakitan PC 2019. Gemar menganalisis benchmark performa komputasi, efisiensi termal &amp; konsumsi daya (*performance-per-watt*), hingga kesiapan hardware menjalankan *local LLM* dan penyetelan *undervolting*.
           </p>
           <ul class="chips">
-            <li>PC Hardware</li>
-            <li>Arsitektur Komputasi</li>
-            <li>Generative AI</li>
-            <li>Otomasi Alur Kerja</li>
+            <li>NVIDIA · AMD · Intel</li>
+            <li>Snapdragon &amp; MediaTek</li>
+            <li>Local LLM Compute</li>
+            <li>Benchmark &amp; Thermals</li>
+            <li>Undervolting / Tuning</li>
           </ul>
         </article>
 
         <article class="about-card">
           <div class="about-card-head">
-            <span class="about-badge">Gaya Kerja</span>
-            <h3>Ketenangan, Presisi &amp; Komunikasi</h3>
+            <span class="about-badge">Gaya Kerja &amp; Keputusan</span>
+            <h3>Riset Komparatif &amp; Ketenangan</h3>
           </div>
           <p>
-            Menganut pendekatan kerja terukur dan tenang (*mindful &amp; sustainable productivity*). Menghadapi situasi kompleks dengan kepala dingin tanpa panik. Terbiasa berkomunikasi secara asertif, bernada rendah, dan berfokus pada solusi objektif tanpa tensi.
+            Pengambilan keputusan berbasis riset mendalam tanpa kompromi (*data-driven down to the core*). Terbiasa membedah review teknis dan membandingkan multi-variabel (A ke B hingga Z) sebelum menetapkan solusi. Menganut etos kerja tenang (*level-headed*), anti-panik, dan berkomunikasi dengan nada terkontrol berorientasi pada penyelesaian masalah.
           </p>
           <ul class="chips">
-            <li>Level-Headed</li>
+            <li>Data-Driven Decision</li>
+            <li>Komparasi Multi-Variabel</li>
             <li>Anti-Panik</li>
             <li>Komunikasi Asertif</li>
-            <li>Kerja Terukur &amp; Rapi</li>
+            <li>Slow Living Ethos</li>
           </ul>
         </article>
 
@@ -316,7 +330,7 @@
             <h3>Daya Tahan &amp; Problem Solving Tuntas</h3>
           </div>
           <p>
-            Gemar membaca narasi mendalam dan menuntaskan teka-teki logika sejak dini. Menyelesaikan game bertingkat kesulitan tinggi (*high-difficulty: Sekiro, Lies of P*) serta menyelesaikan eksplorasi dunia terbuka 100% tuntas (*Genshin Impact, Wuthering Waves*). Mengasah keuletan, pengenalan pola, dan komitmen menyelesaikan tantangan hingga tuntas.
+            Gemar membaca narasi mendalam dan menuntaskan teka-teki logika sejak dini. Menyelesaikan game bertingkat kesulitan tinggi (*soulslike: Sekiro, Lies of P*) serta menyelesaikan eksplorasi dunia terbuka 100% tuntas (*Genshin Impact, Wuthering Waves*). Mengasah keuletan mental (*high grit*), pengenalan pola rumit, dan komitmen menyelesaikan pekerjaan hingga tuntas.
           </p>
           <ul class="chips">
             <li>High Grit &amp; Tenacity</li>
@@ -347,6 +361,6 @@
     <p>Sistem Informasi, UDINUS Semarang</p>
   </footer>
 
-  <script src="script.js?v=20261016-v3"></script>
+  <script src="script.js?v=20261016-v4"></script>
 </body>
 </html>

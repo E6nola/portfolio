@@ -817,10 +817,76 @@ if (specListEl && certListEl) {
     }
   }
 
+  const certGridWrapper = document.getElementById("cert-grid-wrapper");
+  const certToggleMore = document.getElementById("cert-toggle-more");
+  const certMoreText = certToggleMore ? certToggleMore.querySelector(".cert-more-text") : null;
+
+  function updateCollapsedHeight() {
+    if (!certGridWrapper) return;
+    if (certGridWrapper.classList.contains("is-collapsed")) {
+      const firstCard = certListEl.querySelector(".cert-card:not([hidden])");
+      if (firstCard) {
+        certGridWrapper.style.maxHeight = `${firstCard.offsetHeight + 4}px`;
+      }
+    } else {
+      certGridWrapper.style.maxHeight = "";
+    }
+  }
+
+  function setCertGridExpanded(expand) {
+    if (!certGridWrapper || !certToggleMore) return;
+    if (expand) {
+      certGridWrapper.classList.remove("is-collapsed");
+      certGridWrapper.classList.add("is-expanded");
+      certGridWrapper.style.maxHeight = "";
+      certToggleMore.setAttribute("aria-expanded", "true");
+      if (certMoreText) certMoreText.textContent = "Tampilkan Lebih Sedikit";
+    } else {
+      certGridWrapper.classList.remove("is-expanded");
+      certGridWrapper.classList.add("is-collapsed");
+      updateCollapsedHeight();
+      certToggleMore.setAttribute("aria-expanded", "false");
+      if (certMoreText) certMoreText.textContent = "Tampilkan Semua 48 Sertifikat";
+    }
+  }
+
+  if (certToggleMore) {
+    certToggleMore.addEventListener("click", () => {
+      const isCurrentlyCollapsed = certGridWrapper && certGridWrapper.classList.contains("is-collapsed");
+      if (isCurrentlyCollapsed) {
+        setCertGridExpanded(true);
+      } else {
+        setCertGridExpanded(false);
+        const anchor = document.querySelector(".all-certs-block");
+        if (anchor) {
+          anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  }
+
   certFilterBtns.forEach((b) =>
-    b.addEventListener("click", () => applyCertFilter(b.dataset.certFilter))
+    b.addEventListener("click", () => {
+      applyCertFilter(b.dataset.certFilter);
+      if (b.dataset.certFilter !== "semua") {
+        setCertGridExpanded(true);
+      } else {
+        updateCollapsedHeight();
+      }
+    })
   );
   applyCertFilter("semua");
+  updateCollapsedHeight();
+
+  window.addEventListener(
+    "resize",
+    () => {
+      if (certGridWrapper && certGridWrapper.classList.contains("is-collapsed")) {
+        updateCollapsedHeight();
+      }
+    },
+    { passive: true }
+  );
 }
 
 // ---------- sticky smart header (hide on scroll down, show on scroll up) ----------
