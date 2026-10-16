@@ -826,7 +826,7 @@ if (specListEl && certListEl) {
     if (certGridWrapper.classList.contains("is-collapsed")) {
       const firstCard = certListEl.querySelector(".cert-card:not([hidden])");
       if (firstCard) {
-        certGridWrapper.style.maxHeight = `${firstCard.offsetHeight + 4}px`;
+        certGridWrapper.style.maxHeight = `${firstCard.offsetHeight + 18}px`;
       }
     } else {
       certGridWrapper.style.maxHeight = "";

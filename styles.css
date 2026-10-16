@@ -930,11 +930,15 @@ a { color: var(--blue); }
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
-  transition: border-color .15s ease, background-color .25s ease, transform .15s ease;
+  transition: border-color .15s ease, background-color .25s ease, transform .15s ease, box-shadow .15s ease;
 }
 .cert-card:hover {
   border-color: var(--blue);
   transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(33, 71, 184, 0.12);
+}
+[data-theme="dark"] .cert-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
 }
 .cert-card-header {
   display: flex;
@@ -979,13 +983,16 @@ a { color: var(--blue); }
 .cert-grid-wrapper {
   position: relative;
   overflow: hidden;
+  padding: 8px 6px;
+  margin: -8px -6px 0;
+  box-sizing: border-box;
   transition: max-height .45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .cert-grid-wrapper.is-collapsed {
-  max-height: 142px;
+  max-height: 156px;
 }
 .cert-grid-wrapper.is-expanded {
-  max-height: 5000px;
+  max-height: 5500px;
 }
 .cert-grid-fade {
   display: none;
