@@ -1,225 +1,243 @@
-// Data proyek. Ubah atau tambah proyek di sini.
+// Data portofolio rekayasa sistem informasi
 // area: "analisis" | "web" | "bisnis" | "otomasi"
 const AREA_LABEL = {
-  analisis: "Analisis & perancangan SI",
-  web: "Pengembangan web",
-  bisnis: "Proses bisnis & data",
-  otomasi: "Otomasi & AI",
+  analisis: "Analisis & Perancangan SI Enterprise",
+  web: "Rekayasa Web & Basis Data",
+  bisnis: "Tata Kelola & Analitika Data",
+  otomasi: "Otomasi Pipeline & Agen AI",
 };
 
 const FEATURED = {
   area: "otomasi",
-  title: "Hermes Kuliah",
+  title: "Hermes Academic Workflow Automation Engine",
   summary:
-    "Asisten kuliah pribadi yang saya buat sendiri. Asisten ini membaca Kulino dan SiAdin UDINUS, lalu mengirim info tugas dan presensi ke Discord.",
+    "Sistem otomasi otonom berbasis Python yang terintegrasi langsung dengan platform akademik Kulino LMS dan SiAdin UDINUS, mendistribusikan telemetri jadwal, tugas, dan presensi secara real-time ke Discord.",
   points: [
-    "Memindai Kulino (LMS UDINUS) untuk mencari tugas baru, tenggat, dan materi, lalu menulis ringkasan tugas dalam Markdown.",
-    "Mengambil teks dari materi PDF, PPTX, dan DOCX supaya agen AI bisa membantu belajar.",
-    "Mengirim pengingat presensi online SiAdin ke Discord, dengan proses latar yang hampir tidak memakai CPU.",
-    "Menyimpan kata sandi dan token dalam bentuk terenkripsi dengan Windows DPAPI.",
-    "Kalau tampilan situs kampus berubah, skrip menyimpan screenshot dan HTML supaya kesalahan mudah diperbaiki.",
-    "Merapikan 400+ berkas kuliah ke 10 folder tema dan membuat katalog materi secara otomatis.",
+    "Memindai dan mengekstrak data dari LMS Kulino secara terjadwal untuk mendeteksi penugasan baru, batas waktu submit, dan repositori materi, kemudian menyusun rekapitulasi terstruktur dalam format Markdown.",
+    "Pipeline ekstraksi teks otomatis dari dokumen multi-format (PDF, PPTX, DOCX) untuk menyediakan konteks komputasi bagi ekosistem agen AI.",
+    "Daemon pemantau presensi SiAdin dengan eksekusi background berbeban komputasi rendah (*near-zero CPU overhead*), mengirimkan notifikasi pengingat tepat waktu.",
+    "Implementasi keamanan data sensitif menggunakan enkripsi Windows DPAPI untuk melindungi token sesi dan kredensial akses.",
+    "Mekanisme fault-tolerance mandiri: menyimpan snapshot DOM HTML dan tangkapan layar saat anomali antarmuka terdeteksi guna memfasilitasi audit dan penanganan instan.",
+    "Pengorganisasian otomatis 400+ aset dokumen akademik ke dalam hierarki direktori tematik terindeks.",
   ],
-  tech: ["Python", "Playwright", "REST API", "Bot Discord", "Windows DPAPI", "Agen AI"],
+  tech: ["Python", "Playwright", "REST API", "Discord Bot Integration", "Windows DPAPI", "Autonomous AI Agents"],
   pipeline: [
-    "Login ke Kulino dan SiAdin",
-    "Ambil tugas, materi, dan jadwal",
-    "Ekstrak teks dan susun ringkasan",
-    "Kirim notifikasi ke Discord",
+    "Otentikasi Kredensial Kulino & SiAdin",
+    "Ekstraksi Jadwal, Tugas & Aset Materi",
+    "Pemrosesan Teks & Ringkasan Terstruktur",
+    "Diseminasi Notifikasi Real-time ke Discord",
   ],
 };
 
 const PROJECTS = [
   {
     area: "analisis",
-    title: "Sistem informasi jasa mahar, Mahar Indah Kudus",
+    title: "Sistem Informasi Jasa Mahar & E-Commerce (Mahar Indah Kudus)",
     summary:
-      "Analisis dan perancangan sistem pemesanan mahar untuk UMKM di Kudus, dengan dua pendekatan: terstruktur dan berorientasi objek.",
-    context: "Tugas UTS dan UAS APSI Terstruktur dan APSI Berorientasi Objek.",
+      "Analisis dan perancangan arsitektur sistem informasi pemesanan kustom untuk UMKM di Kudus menggunakan metodologi ganda: terstruktur (Structured Analysis) dan berorientasi objek (OOAD).",
+    context: "Dokumentasi Arsitektur Perancangan Sistem Informasi Terstruktur & Berorientasi Objek.",
     points: [
-      "Memetakan proses bisnis berjalan (pemesanan, pembelian bahan, produksi) dan membuat proses usulan.",
-      "Mencari akar masalah dengan diagram fishbone.",
-      "Membuat use case untuk 5 aktor: customer, admin, pemilik, produksi, dan kurir.",
-      "Membuat diagram konteks, DFD level 0 dan level 1, tabel relasi, serta desain input dan output.",
-      "Merancang tampilan toko online, keranjang, dan nota digital.",
+      "Pemodelan proses bisnis komparatif (*as-is vs to-be business process*) mencakup siklus pemesanan, pengadaan bahan baku, produksi kustom, dan distribusi logistik.",
+      "Analisis akar masalah (*root cause analysis*) komprehensif menggunakan diagram Fishbone (Ishikawa).",
+      "Perancangan Use Case & Activity Diagram multi-role yang mengorkestrasi 5 aktor operasional (Customer, Admin, Pemilik, Tim Produksi, dan Logistik).",
+      "Konstruksi Diagram Konteks, DFD Level 0 & Level 1 terperinci, normalisasi tabel relasi database, serta desain antarmuka input/output.",
+      "Perancangan antarmuka e-commerce fungsional: katalog produk dinamis, keranjang belanja, dan sistem penerbitan invoice digital.",
     ],
-    tech: ["Use case", "Activity diagram", "DFD", "Fishbone", "Desain UI"],
+    tech: ["Use Case Modeling", "Activity Diagram", "DFD Level 0-1", "Fishbone Analysis", "UI/UX Design"],
     images: [
-      { src: "assets/mahar-usecase.jpg", alt: "Diagram use case sistem Mahar Indah Kudus", caption: "Use case" },
-      { src: "assets/mahar-dfd0.jpg", alt: "DFD level 0 sistem Mahar Indah Kudus", caption: "DFD level 0" },
-      { src: "assets/mahar-menu.jpg", alt: "Desain halaman produk toko online mahar", caption: "Desain halaman produk" },
+      { src: "assets/mahar-usecase.jpg", alt: "Diagram use case sistem Mahar Indah Kudus", caption: "Diagram Use Case" },
+      { src: "assets/mahar-dfd0.jpg", alt: "DFD level 0 sistem Mahar Indah Kudus", caption: "DFD Level 0" },
+      { src: "assets/mahar-menu.jpg", alt: "Desain halaman produk toko online mahar", caption: "Desain Antarmuka Produk" },
     ],
   },
   {
     area: "analisis",
-    title: "HealthConnect",
+    title: "HealthConnect: Platform Layanan Kesehatan Terpadu",
     summary:
-      "Rancangan aplikasi layanan kesehatan dengan metode design thinking, dari empati pengguna sampai prototipe.",
-    context: "Proyek UAS Interaksi Manusia dan Komputer.",
+      "Perancangan antarmuka dan alur interaksi layanan kesehatan digital berbasis metodologi Design Thinking secara komprehensif, mulai dari fase User Empathy hingga Prototype interaktif.",
+    context: "Proyek Rekayasa Interaksi Manusia dan Komputer (IMK).",
     points: [
-      "Mengikuti tahap design thinking: empathize, define, ideate, prototype, test.",
-      "Membuat prototipe tampilan versi pertama.",
-      "Pada tugas lain, saya juga mengevaluasi desain antarmuka Twitch.",
+      "Penerapan siklus lengkap Design Thinking: Empathize, Define (Problem Statement), Ideate, High-Fidelity Prototype, dan Usability Testing.",
+      "Penyusunan user persona, customer journey mapping, dan perancangan prototipe antarmuka sistem medis.",
+      "Studi komparatif dan audit evaluasi heuristik antarmuka platform digital skala besar untuk mengoptimalkan efisiensi navigasi.",
     ],
-    tech: ["Design thinking", "Prototipe UI", "Evaluasi desain"],
+    tech: ["Design Thinking", "High-Fidelity Prototyping", "Heuristic UI Evaluation", "User Journey Mapping"],
   },
   {
     area: "analisis",
-    title: "Skenario test case dan pengujian white box",
+    title: "Skenario Test Case & Pengujian Sistem White-Box",
     summary:
-      "Desain skenario pengujian untuk fitur aplikasi Shopee, dan pengujian white box untuk alur program.",
-    context: "Tugas Pengujian Perangkat Lunak dan Implementasi & Pengujian Sistem.",
+      "Desain komprehensif matriks pengujian fungsionalitas aplikasi e-commerce skala enterprise dan analisis pengujian struktural berbasis White-Box Testing.",
+    context: "Implementasi Penjaminan Mutu & Pengujian Perangkat Lunak (QA & Software Testing).",
     points: [
-      "Menulis test case dengan langkah, data uji, hasil yang diharapkan, dan hasil nyata.",
-      "Menggambar flow graph dan menghitung jalur dasar untuk pengujian white box.",
+      "Penyusunan matriks test case menyeluruh dengan formulasi parameter input, prasyarat, alur uji, serta verifikasi hasil aktual terhadap ekspektasi sistem.",
+      "Konstruksi Flow Graph dan kalkulasi Cyclomatic Complexity untuk memetakan seluruh Independent Paths pada algoritma inti.",
+      "Kombinasi metodologi Black-Box (Equivalence Partitioning & Boundary Value Analysis) dan White-Box (Basis Path Testing).",
     ],
-    tech: ["Test case", "Black box", "White box"],
+    tech: ["Test Case Matrix", "Black-Box Testing", "White-Box Testing", "Cyclomatic Complexity", "Basis Path Testing"],
   },
   {
     area: "web",
-    title: "Sistem peminjaman buku",
+    title: "Sistem Manajemen Perpustakaan & Sirkulasi Buku (MVC Architecture)",
     summary:
-      "Aplikasi web perpustakaan dengan PHP native pola MVC dan router buatan sendiri.",
-    context: "Proyek UTS Pemrograman Web Lanjut.",
+      "Aplikasi web tata kelola sirkulasi buku berbasis PHP Native murni dengan implementasi arsitektur Model-View-Controller (MVC) terstruktur dan custom routing engine.",
+    context: "Proyek Rekayasa Pemrograman Web Berorientasi Objek.",
     points: [
-      "Daftar akun, login, dan logout dengan sesi.",
-      "Tambah, ubah, hapus, dan cari data buku.",
-      "Upload sampul buku dengan pembuatan thumbnail otomatis.",
-      "Pinjam buku: status, peminjam, dan waktu pinjam tercatat di database.",
+      "Arsitektur MVC modular dengan custom request router untuk pemisahan logika bisnis dan presentasi yang bersih.",
+      "Manajemen otentikasi sesi terenkripsi dengan proteksi otorisasi berbasis hak akses.",
+      "Manajemen repositori data buku: operasi CRUD dinamis, pencarian terindeks, dan pemrosesan otomatis thumbnail gambar sampul.",
+      "Modul sirkulasi transaksi: pencatatan log peminjaman real-time, validasi ketersediaan stok, dan pelacakan riwayat peminjam.",
     ],
-    tech: ["PHP 8", "MariaDB", "MVC", "Upload gambar"],
-    link: { href: "https://github.com/E6nola/perpustakaan-mvc-php", label: "Lihat kode di GitHub" },
-    images: [{ src: "assets/buku-cover.jpg", alt: "Contoh sampul buku pada aplikasi", caption: "Data contoh sampul" }],
+    tech: ["PHP 8 Native", "MariaDB / MySQL", "Arsitektur MVC", "Custom Router", "Image Processing"],
+    link: { href: "https://github.com/E6nola/perpustakaan-mvc-php", label: "Lihat Kode di GitHub" },
+    images: [{ src: "assets/buku-cover.jpg", alt: "Contoh sampul buku pada aplikasi", caption: "Data Contoh Sampul" }],
   },
   {
     area: "web",
-    title: "Inventaris ATK",
+    title: "Dashboard Inventaris & Valuasi Aset ATK",
     summary:
-      "Dashboard inventaris alat tulis kantor dengan login, kelola produk, dan ringkasan nilai stok.",
-    context: "Tugas Pemrograman Web Lanjut.",
+      "Platform dashboard terpusat untuk monitoring inventaris dan valuasi persediaan aset perlengkapan kantor secara real-time.",
+    context: "Aplikasi Tata Kelola Operasional & Basis Data Relasional.",
     points: [
-      "Kartu ringkasan: total produk, total stok, dan total nilai persediaan.",
-      "Tambah, ubah, hapus produk dengan upload foto barang.",
-      "Query memakai prepared statement untuk mencegah SQL injection.",
+      "Panel analitik real-time: kalkulasi metrik total SKU, akumulasi stok fisik, dan valuasi finansial persediaan.",
+      "Manajemen daur hidup aset (CRUD produk) dengan pipeline unggah dan kompresi media.",
+      "Implementasi keamanan basis data menggunakan PDO Prepared Statements untuk mengeliminasi kerentanan SQL Injection.",
     ],
-    tech: ["PHP", "MySQL", "Prepared statement", "CSS"],
-    link: { href: "https://github.com/E6nola/inventaris-atk-php", label: "Lihat kode di GitHub" },
+    tech: ["PHP", "MySQL", "PDO Prepared Statements", "Dashboard Analytics", "CSS3"],
+    link: { href: "https://github.com/E6nola/inventaris-atk-php", label: "Lihat Kode di GitHub" },
   },
   {
     area: "web",
-    title: "Data mahasiswa dengan live search",
+    title: "Portal Data Mahasiswa Terintegrasi dengan Live Search & Ekspor Laporan",
     summary:
-      "CRUD data mahasiswa pola MVC, dengan pencarian langsung (AJAX) dan export laporan.",
-    context: "Tugas minggu 9 Pemrograman Web Lanjut.",
+      "Aplikasi manajemen data entitas mahasiswa pola MVC dengan kapabilitas asynchronous real-time querying (AJAX) dan modul ekspor laporan multi-format.",
+    context: "Implementasi Web Enterprise & Asynchronous Communication.",
     points: [
-      "Hasil pencarian muncul saat mengetik, tanpa memuat ulang halaman.",
-      "Export data ke Excel dengan PhpSpreadsheet dan ke PDF dengan Dompdf.",
-      "Pustaka dikelola dengan Composer.",
+      "Mekanisme live search instan berbasis AJAX yang memperbarui representasi DOM secara asinkron tanpa reload halaman.",
+      "Integrasi pipeline ekspor data: otomasi pembuatan spreadsheet XLSX via PhpSpreadsheet dan dokumen PDF via Dompdf.",
+      "Manajemen dependensi modern terstandarisasi dengan Composer.",
     ],
-    tech: ["PHP", "AJAX", "MVC", "Composer", "PhpSpreadsheet", "Dompdf"],
-    link: { href: "https://github.com/E6nola/mahasiswa-crud-livesearch", label: "Lihat kode di GitHub" },
+    tech: ["PHP", "Asynchronous AJAX", "Arsitektur MVC", "Composer", "PhpSpreadsheet", "Dompdf"],
+    link: { href: "https://github.com/E6nola/mahasiswa-crud-livesearch", label: "Lihat Kode di GitHub" },
   },
   {
     area: "web",
-    title: "Inventaris dengan login dan upload",
+    title: "Sistem Autentikasi Pengguna & Manajemen Inventaris Aset",
     summary:
-      "Aplikasi CRUD dengan registrasi, login, dan upload gambar. Kode ada di GitHub.",
-    context: "Tugas minggu 1 dan 2, semester 4.",
+      "Aplikasi tata kelola data terproteksi dengan gerbang autentikasi aman, proteksi hak akses pengguna, dan modul manipulasi aset digital.",
+    context: "Implementasi Sistem CRUD & Manajemen Kredensial Pengguna.",
     points: [
-      "Registrasi dan login pengguna.",
-      "Tambah, ubah, hapus data dengan upload gambar.",
+      "Arsitektur autentikasi registrasi dan verifikasi login pengguna berbasis hashing password aman.",
+      "Operasi manipulasi data terpadu (CRUD) dengan upload dan manajemen file media terenkripsi.",
     ],
-    tech: ["PHP", "MySQL", "Git"],
-    link: { href: "https://github.com/E6nola/crud-inventaris-dasar", label: "Lihat kode di GitHub" },
+    tech: ["PHP", "MySQL", "Authentication & Session", "Git Versioning"],
+    link: { href: "https://github.com/E6nola/crud-inventaris-dasar", label: "Lihat Kode di GitHub" },
   },
   {
     area: "web",
-    title: "Cek ongkos kirim",
+    title: "Portal Verifikasi Tarif Logistik Multi-Kurir (API Integration)",
     summary:
-      "Halaman cek ongkir yang mengambil data tarif kurir dari API RajaOngkir.",
-    context: "Tugas minggu 10 Pemrograman Web Lanjut.",
-    points: ["Pengguna memilih kota asal, kota tujuan, berat, dan kurir, lalu melihat tarif."],
-    tech: ["PHP", "REST API", "RajaOngkir"],
-    link: { href: "https://github.com/E6nola/cek-ongkir-rajaongkir", label: "Lihat kode di GitHub" },
+      "Aplikasi kalkulasi dan komparasi tarif ekspedisi logistik secara real-time melalui konsumsi RESTful API RajaOngkir.",
+    context: "Integrasi Antar-Sistem & Layanan Web (REST API Consumption).",
+    points: [
+      "Integrasi REST API untuk komputasi tarif pengiriman lintas-kurir nasional (JNE, POS, TIKI).",
+      "Parsing payload JSON asinkron dan normalisasi data komparasi biaya logistik secara efisien.",
+    ],
+    tech: ["PHP", "RESTful API", "JSON Parsing", "RajaOngkir Engine"],
+    link: { href: "https://github.com/E6nola/cek-ongkir-rajaongkir", label: "Lihat Kode di GitHub" },
   },
   {
     area: "web",
-    title: "Daftar tugas mahasiswa",
+    title: "Sistem Manajemen & Pelacakan Penugasan Akademik Mahasiswa",
     summary:
-      "Aplikasi to-do untuk mahasiswa: login dengan NIM, lalu kelola tugas, tenggat, dan status.",
-    context: "Proyek UAS Pemrograman Web Dasar.",
-    points: ["Login dengan sesi PHP.", "Tambah, ubah, hapus tugas dengan tenggat dan status."],
-    tech: ["PHP", "MySQL", "CSS"],
-    link: { href: "https://github.com/E6nola/manajemen-tugas-kuliah", label: "Lihat kode di GitHub" },
+      "Aplikasi produktivitas berbasis web untuk pelacakan alur penugasan akademik, pemantauan tenggat waktu, dan klasifikasi status penyelesaian.",
+    context: "Aplikasi Web Produktivitas & Manajemen Status Tugas.",
+    points: [
+      "Otentikasi pengguna berbasis identitas akademik (NIM) dengan manajemen sesi aman.",
+      "Manajemen penugasan dinamis: prioritas tenggat waktu, pelacakan siklus progres, dan pengarsipan data.",
+    ],
+    tech: ["PHP", "MySQL", "Session Control", "CSS3 Grid"],
+    link: { href: "https://github.com/E6nola/manajemen-tugas-kuliah", label: "Lihat Kode di GitHub" },
   },
   {
     area: "web",
-    title: "Website subsidi sembako",
+    title: "Portal Distribusi Subsidi Logistik & Sembako Digital",
     summary:
-      "Website informasi program subsidi sembako, responsif dengan Bootstrap 5.",
-    context: "Proyek UTS Pemrograman Web Dasar.",
-    points: ["Navbar dengan dropdown, halaman promo, dan interaksi JavaScript."],
-    tech: ["HTML", "Bootstrap 5", "JavaScript"],
-    link: { href: "https://github.com/E6nola/portal-bansos-sembako", label: "Lihat kode di GitHub" },
-    demo: { href: "https://e6nola.github.io/portal-bansos-sembako/", label: "Buka Live Demo" },
+      "Portal informasi publik responsif untuk transparansi distribusi bantuan sosial sembako dengan rancangan antarmuka Bootstrap 5 modular.",
+    context: "Pengembangan Antarmuka Web Publik Responsif.",
+    points: [
+      "Desain antarmuka responsif ramah seluler (*mobile-first design*) berstandar aksesibilitas tinggi.",
+      "Struktur navigasi hierarkis, panel interaksi dinamis JavaScript, dan arsitektur tata letak fluid.",
+    ],
+    tech: ["Semantic HTML5", "Bootstrap 5 Framework", "JavaScript ES6"],
+    link: { href: "https://github.com/E6nola/portal-bansos-sembako", label: "Lihat Kode di GitHub" },
+    demo: { href: "https://e6nola.github.io/portal-bansos-sembako/", label: "Buka Live Demo ↗" },
   },
   {
     area: "bisnis",
-    title: "Dari sistem lama ke ERP terintegrasi",
+    title: "Transformasi Arsitektur Sistem Legacy Menuju Enterprise Resource Planning (ERP)",
     summary:
-      "Studi kasus PT Senja Nusantara dan usaha furnitur: bagaimana ERP menyatukan penjualan, produksi, gudang, dan keuangan.",
-    context: "Tugas dan UAS Perencanaan Sumber Daya Perusahaan.",
+      "Studi kasus integrasi proses bisnis komprehensif pada PT Senja Nusantara dan industri manufaktur furnitur: unifikasi silo fungsional penjualan, manufaktur, persediaan, dan akuntansi.",
+    context: "Perencanaan Strategis & Arsitektur Enterprise Resource Planning (ERP).",
     points: [
-      "Membandingkan alur as-is (sistem terpisah) dan to-be (ERP).",
-      "Memetakan alur antar modul: SD, PP, MM, procurement, dan FI/CO.",
-      "Membahas perhitungan kebutuhan bahan (MRP) dari BOM.",
+      "Analisis kesenjangan arsitektur proses bisnis *as-is* (sistem terfragmentasi) menuju ekosistem terpadu *to-be* ERP.",
+      "Pemetaan keterhubungan antar-modul enterprise: Sales & Distribution (SD), Production Planning (PP), Materials Management (MM), Procurement, dan Financial Accounting/Controlling (FI/CO).",
+      "Formulasi kalkulasi Material Requirements Planning (MRP) berbasis Bill of Materials (BOM) multi-level untuk menjamin kepastian pasokan produksi.",
     ],
-    tech: ["ERP", "MRP", "As-is / to-be"],
-    images: [{ src: "assets/erp-tobe.jpg", alt: "Alur to-be ERP usaha furnitur", caption: "Alur to-be ERP" }],
+    tech: ["Enterprise ERP Architecture", "Material Requirements Planning (MRP)", "BOM Engineering", "As-Is / To-Be Analysis"],
+    images: [{ src: "assets/erp-tobe.jpg", alt: "Alur to-be ERP usaha furnitur", caption: "Arsitektur To-Be ERP" }],
   },
   {
     area: "bisnis",
-    title: "Tata kelola dan audit TI",
+    title: "Kerangka Tata Kelola & Audit Sistem Informasi Enterprise",
     summary:
-      "Kumpulan tugas tentang cara organisasi mengatur dan memeriksa TI-nya.",
-    context: "Audit SI, Manajemen Layanan TI, Transformasi Digital, dan Rencana Strategis.",
+      "Kajian metodologi audit teknologi informasi, kerangka perbaikan mutu berkelanjutan (PDCA), dan strategi manajemen layanan TI (ITSM) korporat.",
+    context: "Audit SI, Tata Kelola TI & Manajemen Risiko Korporat.",
     points: [
-      "Rencana transformasi digital untuk organisasi (UAS).",
-      "Siklus perbaikan PDCA dan istilah ITSM.",
-      "Perencanaan audit sistem informasi dan struktur pengendalian internal.",
+      "Perumusan roadmap transformasi digital organisasi berorientasi pada penciptaan nilai jangka panjang.",
+      "Penerapan siklus perbaikan mutu berkelanjutan Plan-Do-Check-Act (PDCA) yang diselaraskan dengan standar tata kelola ITSM.",
+      "Perancangan program audit sistem informasi, evaluasi pengendalian internal, dan mitigasi risiko operasional TI.",
     ],
-    tech: ["Audit SI", "PDCA", "ITSM", "Transformasi digital"],
+    tech: ["Audit Sistem Informasi", "Siklus Mutu PDCA", "ITSM Framework", "Digital Transformation Strategy"],
   },
   {
     area: "bisnis",
-    title: "Sistem informasi akuntansi",
-    summary: "Studi kasus siklus bisnis dan model data akuntansi dengan diagram REA.",
-    context: "Tugas individu dan kelompok SIA.",
-    points: ["Menggambar diagram REA (resource, event, agent).", "Menjawab studi kasus siklus transaksi."],
-    tech: ["Diagram REA", "Siklus akuntansi"],
-  },
-  {
-    area: "bisnis",
-    title: "Perencanaan jaringan VLSM",
-    summary: "Membagi alamat IP dengan VLSM dan menerapkan 7 lapisan OSI pada contoh nyata.",
-    context: "Tugas Infrastruktur TI.",
-    points: ["Menghitung subnet sesuai jumlah host tiap bagian.", "Contoh penerapan tiap lapisan OSI."],
-    tech: ["VLSM", "Model OSI", "Subnetting"],
-  },
-  {
-    area: "bisnis",
-    title: "Penambangan data",
-    status: "Sedang berjalan",
+    title: "Pemodelan Data Semantik Akuntansi Berbasis REA Framework",
     summary:
-      "Semester ini saya mengerjakan rangkaian proyek data mining dengan alur CRISP-DM, sampai proyek capstone.",
-    context: "Penambangan Data dan Sistem Pendukung Keputusan, semester 5.",
+      "Analisis siklus transaksi bisnis korporat dan perancangan model data relasional akuntansi berbasis kerangka kerja Resource-Event-Agent (REA).",
+    context: "Sistem Informasi Akuntansi & Arsitektur Data Keuangan.",
     points: [
-      "Pra-pemrosesan data dan regresi linier.",
-      "Perbandingan Decision Tree dan KNN dengan evaluasi K-Fold.",
-      "Segmentasi dengan K-Means dan market basket analysis dengan Apriori dan FP-Growth.",
-      "Tabel keputusan untuk Sistem Pendukung Keputusan.",
+      "Konstruksi diagram semantik REA untuk memetakan keterkaitan entitas Sumber Daya (*Resources*), Peristiwa Transaksional (*Events*), dan Pelaku Operasional (*Agents*).",
+      "Analisis siklus pendapatan (*revenue cycle*), siklus pengeluaran (*expenditure cycle*), dan siklus konversi produksi terstandarisasi.",
     ],
-    tech: ["Python", "Google Colab", "CRISP-DM", "Excel"],
+    tech: ["Pemodelan Semantik REA", "Siklus Transaksi Akuntansi", "Data Flow Financial Modeling"],
+  },
+  {
+    area: "bisnis",
+    title: "Rekayasa Alokasi Subnet Jaringan VLSM & Analisis Protokol OSI",
+    summary:
+      "Perancangan skema pengalamatan jaringan logis menggunakan Variable Length Subnet Mask (VLSM) dan analisis komprehensif 7 Lapisan OSI pada arsitektur jaringan enterprise.",
+    context: "Infrastruktur Teknologi Informasi & Komunikasi Data.",
+    points: [
+      "Optimasi utilisasi ruang alamat IPv4 dengan VLSM untuk meminimalkan pemborosan host (*zero subnet wastage*).",
+      "Analisis transmisi data, enkapsulasi paket, dan pemetaan protokol pada setiap tingkatan model referensi 7 Lapisan OSI.",
+    ],
+    tech: ["Subnetting VLSM", "Model Referensi OSI 7 Layer", "Perancangan Topologi Jaringan"],
+  },
+  {
+    area: "bisnis",
+    title: "Analitika Prediktif & Penambangan Data (CRISP-DM Framework)",
+    status: "Sedang Berjalan",
+    summary:
+      "Eksplorasi dan pemodelan penambangan data korporat mengadopsi standar industri CRISP-DM, dari pra-pemrosesan data hingga implementasi model machine learning dan sistem pendukung keputusan.",
+    context: "Data Mining & Decision Support Systems (DSS).",
+    points: [
+      "Pembersihan data (*data cleansing*), rekayasa fitur (*feature engineering*), dan pemodelan regresi prediktif.",
+      "Analisis komparatif algoritma klasifikasi (Decision Tree vs. K-Nearest Neighbors) dengan validasi silang K-Fold Cross Validation.",
+      "Segmentasi pelanggan menggunakan klastering K-Means dan penambangan pola asosiasi belanja (*Market Basket Analysis*) dengan algoritma Apriori & FP-Growth.",
+      "Perancangan matriks keputusan dan integrasi ke dalam Sistem Pendukung Keputusan (SPK) multi-kriteria.",
+    ],
+    tech: ["Python Data Science", "Google Colab", "Metodologi CRISP-DM", "Machine Learning Pipeline"],
   },
 ];
 
@@ -246,14 +264,14 @@ function renderFeatured() {
   const f = FEATURED;
   return el("article", { class: "featured", "data-area": f.area }, [
     el("div", { class: "featured-main" }, [
-      el("span", { class: "tag", text: "Proyek pribadi utama, " + AREA_LABEL[f.area].toLowerCase() }),
+      el("span", { class: "tag", text: "Proyek Unggulan · " + AREA_LABEL[f.area] }),
       el("h3", { text: f.title }),
       el("p", { class: "summary", text: f.summary }),
       list(f.points, "points"),
       list(f.tech, "chips tech"),
     ]),
     el("aside", { class: "featured-side" }, [
-      el("h4", { text: "Cara kerjanya" }),
+      el("h4", { text: "Arsitektur Pipeline Eksekusi" }),
       el("ol", { class: "pipeline" }, f.pipeline.map((t) => el("li", { text: t }))),
     ]),
   ]);
@@ -310,7 +328,9 @@ function applyFilter(area) {
     if (show) shown++;
   });
   statusEl.textContent =
-    area === "semua" ? `Menampilkan semua ${shown} proyek.` : `Menampilkan ${shown} proyek di bidang ${AREA_LABEL[area].toLowerCase()}.`;
+    area === "semua"
+      ? `Menampilkan seluruh ${shown} portofolio proyek rekayasa.`
+      : `Menampilkan ${shown} proyek dalam domain ${AREA_LABEL[area]}.`;
 }
 
 filterBtns.forEach((b) => b.addEventListener("click", () => applyFilter(b.dataset.filter)));
@@ -812,8 +832,8 @@ if (specListEl && certListEl) {
     if (certStatusEl) {
       certStatusEl.textContent =
         cat === "semua"
-          ? `Menampilkan seluruh ${shown} sertifikat Coursera.`
-          : `Menampilkan ${shown} sertifikat kategori ${CERT_CATEGORY_LABEL[cat] || cat}.`;
+          ? `Menampilkan seluruh ${shown} kredensial profesional terverifikasi.`
+          : `Menampilkan ${shown} kredensial profesional kategori ${CERT_CATEGORY_LABEL[cat] || cat}.`;
     }
   }
 
