@@ -25,7 +25,7 @@ const FEATURED = {
     "Otentikasi Kredensial Kulino & SiAdin",
     "Ekstraksi Jadwal, Tugas & Aset Materi",
     "Pemrosesan Teks & Ringkasan Terstruktur",
-    "Diseminasi Notifikasi Real-time ke Discord",
+    "Pengiriman Notifikasi Real-time ke Discord",
   ],
 };
 
