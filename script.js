@@ -822,3 +822,35 @@ if (specListEl && certListEl) {
   );
   applyCertFilter("semua");
 }
+
+// ---------- sticky smart header (hide on scroll down, show on scroll up) ----------
+const siteHeader = document.querySelector(".site-header");
+if (siteHeader) {
+  let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+  const THRESHOLD = 10;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScrollY > 40) {
+        siteHeader.classList.add("is-scrolled");
+      } else {
+        siteHeader.classList.remove("is-scrolled");
+      }
+
+      if (Math.abs(currentScrollY - lastScrollY) < THRESHOLD) return;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 120) {
+        siteHeader.classList.add("is-hidden");
+      } else {
+        siteHeader.classList.remove("is-hidden");
+      }
+
+      lastScrollY = Math.max(0, currentScrollY);
+    },
+    { passive: true }
+  );
+}
+

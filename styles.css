@@ -192,11 +192,37 @@ a { color: var(--blue); }
 }
 .skip:focus { top: 12px; }
 
+/* ---------- sticky smart header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: var(--paper);
+  border-bottom: 1px solid transparent;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.site-header.is-scrolled {
+  border-bottom-color: var(--line);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+[data-theme="dark"] .site-header.is-scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .site-header.is-scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  }
+}
+.site-header.is-hidden {
+  transform: translateY(-100%);
+}
+
 /* ---------- top bar ---------- */
 .topbar {
   max-width: var(--wrap);
   margin: 0 auto;
-  padding: 22px var(--gutter);
+  padding: 16px var(--gutter);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -947,6 +973,74 @@ a { color: var(--blue); }
 }
 .cert-card .cert-link:hover {
   text-decoration: underline;
+}
+
+/* ---------- tentang saya ---------- */
+.about-section {
+  display: flex;
+  flex-direction: column;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 20px;
+}
+.about-card {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease, background-color .25s ease;
+}
+.about-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.about-card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.about-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  width: fit-content;
+}
+.about-card h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.22rem;
+  line-height: 1.25;
+  margin: 0;
+  color: var(--ink);
+}
+.about-card p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--ink);
+  opacity: 0.92;
+}
+.about-card .chips {
+  margin: 0;
+}
+.about-card .chips li {
+  font-size: .82rem;
+  padding: 2px 9px;
+  background: var(--paper);
+  border-color: var(--line);
 }
 
 /* ---------- responsive ---------- */

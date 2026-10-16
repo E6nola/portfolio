@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261016-certs">
+  <link rel="stylesheet" href="styles.css?v=20261016-v3">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script>
     function getStoredTheme() {
@@ -52,46 +52,50 @@
 <body>
   <a class="skip" href="#isi">Langsung ke isi</a>
 
-  <header class="topbar">
-    <a class="brand" href="#">
-      <svg class="brand-logo" viewBox="0 0 64 64" width="28" height="28" aria-hidden="true">
-        <rect width="64" height="64" rx="14" fill="#16213A"/>
-        <circle cx="32" cy="32" r="23" fill="none" stroke="#2B3A5A" stroke-width="2.2" stroke-dasharray="2.5 2"/>
-        <line x1="14" y1="14" x2="22.5" y2="22.5" stroke="#2147B8" stroke-width="2.6" stroke-linecap="round"/>
-        <line x1="50" y1="14" x2="41.5" y2="22.5" stroke="#2147B8" stroke-width="2.6" stroke-linecap="round"/>
-        <line x1="14" y1="50" x2="22.5" y2="41.5" stroke="#2147B8" stroke-width="2.6" stroke-linecap="round"/>
-        <line x1="50" y1="50" x2="41.5" y2="41.5" stroke="#2147B8" stroke-width="2.6" stroke-linecap="round"/>
-        <circle cx="13" cy="13" r="3.4" fill="#F0B429"/>
-        <circle cx="51" cy="13" r="3.4" fill="#F0B429"/>
-        <circle cx="13" cy="51" r="3.4" fill="#F0B429"/>
-        <circle cx="51" cy="51" r="3.4" fill="#F0B429"/>
-        <circle cx="32" cy="32" r="13.5" fill="#1B2845" stroke="#FFFFFF" stroke-width="2"/>
-        <circle cx="32" cy="32" r="6" fill="none" stroke="#F0B429" stroke-width="2.8"/>
-      </svg>
-      <span>Sultan Hafidz</span>
-    </a>
-    <nav aria-label="Navigasi utama">
-      <a href="#keahlian">Keahlian</a>
-      <a href="#proyek">Proyek</a>
-      <a href="#sertifikasi">Sertifikasi</a>
-      <a href="#kontak">Kontak</a>
-      <button id="theme-toggle" class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Ganti mode tampilan" title="Ganti mode tampilan">
-        <svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  <header class="site-header">
+    <div class="topbar">
+      <a class="brand" href="#">
+        <svg class="brand-logo" viewBox="0 0 64 64" width="28" height="28" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#16213A"/>
+          <circle cx="32" cy="32" r="23" fill="none" stroke="#2B3A5A" stroke-width="2.2" stroke-dasharray="2.5 2"/>
+          <line x1="14" y1="14" x2="22.5" y2="22.5" stroke="#2147B8" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="50" y1="14" x2="41.5" y2="22.5" stroke="#2147B8" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="14" y1="50" x2="22.5" y2="41.5" stroke="#2147B8" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="50" y1="50" x2="41.5" y2="41.5" stroke="#2147B8" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="13" cy="13" r="3.4" fill="#F0B429"/>
+          <circle cx="51" cy="13" r="3.4" fill="#F0B429"/>
+          <circle cx="13" cy="51" r="3.4" fill="#F0B429"/>
+          <circle cx="51" cy="51" r="3.4" fill="#F0B429"/>
+          <circle cx="32" cy="32" r="13.5" fill="#1B2845" stroke="#FFFFFF" stroke-width="2"/>
+          <circle cx="32" cy="32" r="6" fill="none" stroke="#F0B429" stroke-width="2.8"/>
         </svg>
-        <svg class="theme-icon icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="5"/>
-          <line x1="12" y1="1" x2="12" y2="3"/>
-          <line x1="12" y1="21" x2="12" y2="23"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-          <line x1="1" y1="12" x2="3" y2="12"/>
-          <line x1="21" y1="12" x2="23" y2="12"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </svg>
-      </button>
-    </nav>
+        <span>Sultan Hafidz</span>
+      </a>
+      <nav aria-label="Navigasi utama">
+        <a href="#keahlian">Keahlian</a>
+        <a href="#proyek">Proyek</a>
+        <a href="#sertifikasi">Sertifikasi</a>
+        <a href="#pendidikan">Pendidikan</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Ganti mode tampilan" title="Ganti mode tampilan">
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
   </header>
 
   <main id="isi">
@@ -250,7 +254,7 @@
     </section>
 
     <!-- PENDIDIKAN -->
-    <section class="section edu">
+    <section id="pendidikan" class="section edu">
       <div class="section-head">
         <h2>Pendidikan</h2>
       </div>
@@ -263,6 +267,64 @@
           Semester ini: Audit SI, Keamanan SI, Kecerdasan Buatan, Penambangan Data,
           Sistem Pendukung Keputusan, Implementasi &amp; Pengujian Sistem, dan Sistem Informasi Akuntansi.
         </p>
+      </div>
+    </section>
+
+    <!-- TENTANG SAYA -->
+    <section id="tentang" class="section about-section">
+      <div class="section-head">
+        <h2>Tentang Saya</h2>
+        <p>Prinsip kerja, antusiasme mendalam pada teknologi, dan cara saya menyelesaikan masalah kompleks.</p>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-card">
+          <div class="about-card-head">
+            <span class="about-badge">Eksplorasi Teknologi</span>
+            <h3>Hardware &amp; AI Enthusiast</h3>
+          </div>
+          <p>
+            Mengikuti ekosistem komputasi dan perakitan PC sejak 2019, mulai dari spesifikasi arsitektur hardware, evolusi semikonduktor, hingga perkembangan akselerasi komputasi modern. Mengintegrasikan teknologi kecerdasan buatan (AI) secara aktif ke alur kerja harian untuk riset, otomasi, dan efisiensi kerja.
+          </p>
+          <ul class="chips">
+            <li>PC Hardware</li>
+            <li>Arsitektur Komputasi</li>
+            <li>Generative AI</li>
+            <li>Otomasi Alur Kerja</li>
+          </ul>
+        </article>
+
+        <article class="about-card">
+          <div class="about-card-head">
+            <span class="about-badge">Gaya Kerja</span>
+            <h3>Ketenangan, Presisi &amp; Komunikasi</h3>
+          </div>
+          <p>
+            Menganut pendekatan kerja terukur dan tenang (*mindful &amp; sustainable productivity*). Menghadapi situasi kompleks dengan kepala dingin tanpa panik. Terbiasa berkomunikasi secara asertif, bernada rendah, dan berfokus pada solusi objektif tanpa tensi.
+          </p>
+          <ul class="chips">
+            <li>Level-Headed</li>
+            <li>Anti-Panik</li>
+            <li>Komunikasi Asertif</li>
+            <li>Kerja Terukur &amp; Rapi</li>
+          </ul>
+        </article>
+
+        <article class="about-card">
+          <div class="about-card-head">
+            <span class="about-badge">Pola Pikir</span>
+            <h3>Daya Tahan &amp; Problem Solving Tuntas</h3>
+          </div>
+          <p>
+            Gemar membaca narasi mendalam dan menuntaskan teka-teki logika sejak dini. Menyelesaikan game bertingkat kesulitan tinggi (*high-difficulty: Sekiro, Lies of P*) serta menyelesaikan eksplorasi dunia terbuka 100% tuntas (*Genshin Impact, Wuthering Waves*). Mengasah keuletan, pengenalan pola, dan komitmen menyelesaikan tantangan hingga tuntas.
+          </p>
+          <ul class="chips">
+            <li>High Grit &amp; Tenacity</li>
+            <li>Pattern Recognition</li>
+            <li>100% Completionist</li>
+            <li>Sintesis Narasi</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -285,6 +347,6 @@
     <p>Sistem Informasi, UDINUS Semarang</p>
   </footer>
 
-  <script src="script.js?v=20261016-certs"></script>
+  <script src="script.js?v=20261016-v3"></script>
 </body>
 </html>
