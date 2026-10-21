@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261021-v7">
+  <link rel="stylesheet" href="styles.css?v=20261021-v9">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script>
     function getStoredTheme() {
@@ -36,6 +36,10 @@
       }
     }
     function toggleTheme() {
+      if (window.__themeVFX && typeof window.__themeVFX.toggle === 'function') {
+        window.__themeVFX.toggle();
+        return;
+      }
       var current = document.documentElement.getAttribute('data-theme') || getStoredTheme() || getSystemTheme();
       var next = current === 'dark' ? 'light' : 'dark';
       try {
@@ -50,6 +54,7 @@
   </script>
 </head>
 <body>
+  <canvas id="theme-vfx-canvas" class="theme-vfx-canvas" aria-hidden="true"></canvas>
   <a class="skip" href="#isi">Langsung ke isi</a>
 
   <header class="site-header">
@@ -373,6 +378,6 @@
     </svg>
   </button>
 
-  <script src="script.js?v=20261021-v8"></script>
+  <script src="script.js?v=20261021-v9"></script>
 </body>
 </html>
