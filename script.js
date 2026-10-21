@@ -1214,8 +1214,32 @@ if (backToTopBtn) {
 // 5. Rapid-Click Trigger: >= 4 rapid clicks within 2.2s activates Easter Egg
 // ==========================================================================
 (function initThemeVFX() {
-  const canvas = document.getElementById("theme-vfx-canvas");
-  if (!canvas) return;
+  let canvas = document.getElementById("theme-vfx-canvas");
+  if (!canvas) {
+    canvas = document.createElement("canvas");
+    canvas.id = "theme-vfx-canvas";
+    canvas.className = "theme-vfx-canvas";
+    canvas.setAttribute("aria-hidden", "true");
+    if (document.body) {
+      document.body.prepend(canvas);
+    } else {
+      document.addEventListener("DOMContentLoaded", () => {
+        if (!document.getElementById("theme-vfx-canvas")) {
+          document.body.prepend(canvas);
+        }
+      });
+    }
+  }
+
+  // Ensure robust fallback styling in case external CSS is cached
+  canvas.style.position = "fixed";
+  canvas.style.top = "0";
+  canvas.style.left = "0";
+  canvas.style.width = "100vw";
+  canvas.style.height = "100vh";
+  canvas.style.pointerEvents = "none";
+  canvas.style.zIndex = "999999";
+
   const ctx = canvas.getContext("2d", { alpha: true });
   if (!ctx) return;
 
@@ -1725,15 +1749,6 @@ if (backToTopBtn) {
     toggle: function () {
       if (isWavingActive) return;
 
-      // Respect accessibility preferences
-      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        const cur = document.documentElement.getAttribute("data-theme") || (window.getStoredTheme ? window.getStoredTheme() : null) || "light";
-        const nxt = cur === "dark" ? "light" : "dark";
-        try { localStorage.setItem("theme", nxt); } catch (e) {}
-        if (typeof updateThemeUI === "function") updateThemeUI(nxt);
-        return;
-      }
-
       const now = performance.now();
       // Track clicks in rolling 2200ms window
       clickHistory = clickHistory.filter((t) => now - t < 2200);
@@ -1762,4 +1777,27 @@ if (backToTopBtn) {
       runNormalSmoothTransition(nextTheme);
     }
   };
+
+  // Directly bind toggleTheme globally and attach click handlers to override any cached HTML
+  window.toggleTheme = function () {
+    if (window.__themeVFX && typeof window.__themeVFX.toggle === "function") {
+      window.__themeVFX.toggle();
+    }
+  };
+
+  function bindThemeToggleBtn() {
+    const btn = document.getElementById("theme-toggle");
+    if (btn) {
+      btn.onclick = function (e) {
+        if (e && e.preventDefault) e.preventDefault();
+        window.__themeVFX.toggle();
+      };
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bindThemeToggleBtn);
+  } else {
+    bindThemeToggleBtn();
+  }
 })();
