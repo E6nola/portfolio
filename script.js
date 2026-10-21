@@ -373,6 +373,30 @@ try {
 
 const CERTIFICATES = [
   {
+    "title": "IBM Business Intelligence (BI) Analyst Professional Certificate",
+    "issuer": "IBM · SkillUp",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/7X2MGDIOXVT2",
+    "type": "Spesialisasi",
+    "category": "data"
+  },
+  {
+    "title": "Applied Data Science Specialization",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/GOIOZRLKP4OJ",
+    "type": "Spesialisasi",
+    "category": "data"
+  },
+  {
+    "title": "Google Digital Marketing & E-commerce Professional Certificate",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/07JPZ5Y6H259",
+    "type": "Spesialisasi",
+    "category": "marketing"
+  },
+  {
     "title": "Data Mining Specialization",
     "issuer": "University of Illinois Urbana-Champaign",
     "date": "October 2026",
@@ -411,6 +435,110 @@ const CERTIFICATES = [
     "url": "https://www.coursera.org/account/accomplishments/specialization/UNOF3GNI1BRN",
     "type": "Spesialisasi",
     "category": "keamanan"
+  },
+  {
+    "title": "Advanced Data Visualization with Tableau",
+    "issuer": "SkillUp",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/9LWILMUHFKO6",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Applied Data Science Capstone",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/CCWZ576ZF5ZG",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "The Business Intelligence (BI) Analyst Capstone Project",
+    "issuer": "SkillUp",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/JT0RU1DMZ9QU",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Data Visualization with Python",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/B4CF4T5YVHWN",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Data Analysis with Python",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/A1MXO69JWY65",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Getting Started with Tableau",
+    "issuer": "SkillUp",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/A4NJGB8VKINX",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Statistical Analysis Fundamentals using Excel",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/A3P1M1FFJP02",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Data Warehouse Fundamentals",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/CYIXYK2OO1N7",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Introduction to Relational Databases (RDBMS)",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/NJ1O0PRON1NB",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Data Visualization and Dashboards with Excel and Cognos",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/64RAKPTHA30H",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Excel Basics for Data Analysis",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/IVSL0R76JR0T",
+    "type": "Kursus",
+    "category": "data"
+  },
+  {
+    "title": "Make the Sale: Build, Launch, and Manage E-commerce Stores",
+    "issuer": "Google",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/DGCLN7R8QO1B",
+    "type": "Kursus",
+    "category": "marketing"
+  },
+  {
+    "title": "Python Project for Data Science",
+    "issuer": "IBM",
+    "date": "October 2026",
+    "url": "https://www.coursera.org/account/accomplishments/verify/AC12MC7224YR",
+    "type": "Kursus",
+    "category": "data"
   },
   {
     "title": "Text Mining and Analytics",
@@ -773,7 +901,7 @@ const CERT_CATEGORY_LABEL = {
 };
 
 function renderSpecCard(c) {
-  return el("article", { class: "spec-card" }, [
+  return el("article", { class: "spec-card reveal-init" }, [
     el("div", { class: "spec-card-top" }, [
       el("span", { class: "spec-badge", text: "★ Spesialisasi Profesional" }),
       el("h4", { text: c.title }),
@@ -794,7 +922,7 @@ function renderCertCard(c) {
   return el(
     "article",
     {
-      class: "cert-card",
+      class: "cert-card reveal-init",
       "data-cat": c.category,
       "data-type": isSpec ? "spesialisasi" : "kursus",
     },
@@ -814,32 +942,15 @@ function renderCertCard(c) {
 if (specListEl && certListEl) {
   const specs = CERTIFICATES.filter((c) => c.type === "Spesialisasi");
   specListEl.append(...specs.map(renderSpecCard));
-
   certListEl.append(...CERTIFICATES.map(renderCertCard));
-
-  function applyCertFilter(cat) {
-    certFilterBtns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.certFilter === cat)));
-    let shown = 0;
-    certListEl.querySelectorAll(".cert-card").forEach((card) => {
-      let show = false;
-      if (cat === "semua") show = true;
-      else if (cat === "spesialisasi") show = card.dataset.type === "spesialisasi";
-      else show = card.dataset.cat === cat;
-      card.hidden = !show;
-      card.style.display = show ? "" : "none";
-      if (show) shown++;
-    });
-    if (certStatusEl) {
-      certStatusEl.textContent =
-        cat === "semua"
-          ? `Menampilkan seluruh ${shown} kredensial profesional terverifikasi.`
-          : `Menampilkan ${shown} kredensial profesional kategori ${CERT_CATEGORY_LABEL[cat] || cat}.`;
-    }
-  }
 
   const certGridWrapper = document.getElementById("cert-grid-wrapper");
   const certToggleMore = document.getElementById("cert-toggle-more");
+  const certMoreAction = document.querySelector(".cert-more-action");
   const certMoreText = certToggleMore ? certToggleMore.querySelector(".cert-more-text") : null;
+
+  let currentCategory = "semua";
+  let currentShownCount = CERTIFICATES.length;
 
   function updateCollapsedHeight() {
     if (!certGridWrapper) return;
@@ -853,20 +964,70 @@ if (specListEl && certListEl) {
     }
   }
 
+  function updateToggleButtonText(isExpanded) {
+    if (!certToggleMore || !certMoreText) return;
+    if (isExpanded) {
+      certMoreText.textContent = "Tampilkan Lebih Sedikit";
+      certToggleMore.setAttribute("aria-expanded", "true");
+    } else {
+      certMoreText.textContent = `Tampilkan Semua ${currentShownCount} Sertifikat`;
+      certToggleMore.setAttribute("aria-expanded", "false");
+    }
+  }
+
   function setCertGridExpanded(expand) {
     if (!certGridWrapper || !certToggleMore) return;
     if (expand) {
       certGridWrapper.classList.remove("is-collapsed");
       certGridWrapper.classList.add("is-expanded");
       certGridWrapper.style.maxHeight = "";
-      certToggleMore.setAttribute("aria-expanded", "true");
-      if (certMoreText) certMoreText.textContent = "Tampilkan Lebih Sedikit";
+      updateToggleButtonText(true);
     } else {
       certGridWrapper.classList.remove("is-expanded");
       certGridWrapper.classList.add("is-collapsed");
       updateCollapsedHeight();
-      certToggleMore.setAttribute("aria-expanded", "false");
-      if (certMoreText) certMoreText.textContent = "Tampilkan Semua 48 Sertifikat";
+      updateToggleButtonText(false);
+    }
+  }
+
+  function applyCertFilter(cat) {
+    currentCategory = cat;
+    certFilterBtns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.certFilter === cat)));
+    let shown = 0;
+    certListEl.querySelectorAll(".cert-card").forEach((card) => {
+      let show = false;
+      if (cat === "semua") show = true;
+      else if (cat === "spesialisasi") show = card.dataset.type === "spesialisasi";
+      else show = card.dataset.cat === cat;
+      card.hidden = !show;
+      card.style.display = show ? "" : "none";
+      if (show) shown++;
+    });
+    currentShownCount = shown;
+
+    if (certStatusEl) {
+      certStatusEl.textContent =
+        cat === "semua"
+          ? `Menampilkan seluruh ${shown} kredensial profesional terverifikasi.`
+          : `Menampilkan ${shown} kredensial profesional kategori ${CERT_CATEGORY_LABEL[cat] || cat}.`;
+    }
+
+    // Dynamic button behavior: if shown <= 3, all cards are already visible without collapsing!
+    if (shown <= 3) {
+      if (certMoreAction) certMoreAction.style.display = "none";
+      if (certGridWrapper) {
+        certGridWrapper.classList.remove("is-collapsed");
+        certGridWrapper.classList.add("is-expanded");
+        certGridWrapper.style.maxHeight = "";
+      }
+    } else {
+      if (certMoreAction) certMoreAction.style.display = "flex";
+      // If returning to a category, keep expanded if already expanded, or update label
+      const isCurrentlyCollapsed = certGridWrapper && certGridWrapper.classList.contains("is-collapsed");
+      updateToggleButtonText(!isCurrentlyCollapsed);
+      if (isCurrentlyCollapsed) {
+        updateCollapsedHeight();
+      }
     }
   }
 
@@ -888,11 +1049,6 @@ if (specListEl && certListEl) {
   certFilterBtns.forEach((b) =>
     b.addEventListener("click", () => {
       applyCertFilter(b.dataset.certFilter);
-      if (b.dataset.certFilter !== "semua") {
-        setCertGridExpanded(true);
-      } else {
-        updateCollapsedHeight();
-      }
     })
   );
   applyCertFilter("semua");
@@ -940,3 +1096,108 @@ if (siteHeader) {
   );
 }
 
+// ---------- INTERACTIVE SCROLL & MODERN REVEAL (Khanh Nguyen inspired, calm & refined) ----------
+// 1. Reading / Scroll Progress Bar
+const progressBar = document.getElementById("scroll-progress-bar");
+function updateScrollProgress() {
+  if (!progressBar) return;
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+}
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+updateScrollProgress();
+
+// 2. Active Scroll-Spy on Navigation
+const navLinks = document.querySelectorAll(".topbar nav a[href^='#']");
+const sections = Array.from(navLinks).map((link) => {
+  const id = link.getAttribute("href").slice(1);
+  return document.getElementById(id);
+}).filter(Boolean);
+
+function updateActiveNav() {
+  const scrollPos = (window.pageYOffset || document.documentElement.scrollTop) + 160;
+  let activeId = "";
+
+  for (let i = sections.length - 1; i >= 0; i--) {
+    const sec = sections[i];
+    if (sec && sec.offsetTop <= scrollPos) {
+      activeId = sec.id;
+      break;
+    }
+  }
+
+  navLinks.forEach((link) => {
+    const isCurrent = link.getAttribute("href") === `#${activeId}`;
+    link.classList.toggle("is-active", isCurrent);
+  });
+}
+window.addEventListener("scroll", updateActiveNav, { passive: true });
+updateActiveNav();
+
+// 3. Scroll Reveal via IntersectionObserver
+const revealElements = document.querySelectorAll(
+  ".section-head, .featured, .project, .skill, .spec-card, .cert-card, .about-card, .edu-body, .contact"
+);
+revealElements.forEach((el, i) => {
+  if (!el.classList.contains("reveal-init")) {
+    el.classList.add("reveal-init");
+  }
+  // Optional stagger index among siblings
+  const parent = el.parentElement;
+  if (parent) {
+    const siblings = Array.from(parent.children);
+    const idx = siblings.indexOf(el);
+    el.style.setProperty("--reveal-index", idx >= 0 ? idx % 6 : 0);
+  }
+});
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-in");
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -40px 0px", threshold: 0.1 }
+  );
+
+  revealElements.forEach((el) => revealObserver.observe(el));
+} else {
+  revealElements.forEach((el) => el.classList.add("reveal-in"));
+}
+
+// 4. Subtle Card Spotlight Glow on Mouse Movement
+const interactiveCards = document.querySelectorAll(
+  ".spec-card, .cert-card, .about-card, .skill, .featured, .project"
+);
+interactiveCards.forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  });
+});
+
+// 5. Floating Back-to-Top Button
+const backToTopBtn = document.getElementById("back-to-top");
+if (backToTopBtn) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      backToTopBtn.classList.toggle("is-visible", scrollY > 450);
+    },
+    { passive: true }
+  );
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}

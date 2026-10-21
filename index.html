@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261016-v6">
+  <link rel="stylesheet" href="styles.css?v=20261021-v7">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script>
     function getStoredTheme() {
@@ -96,12 +96,19 @@
         </button>
       </nav>
     </div>
+    <div class="scroll-progress-container" aria-hidden="true">
+      <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
   </header>
 
   <main id="isi">
     <!-- HERO: diagram konteks (gaya DFD) -->
     <section class="hero">
       <div class="hero-text">
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          <span>Terbuka untuk Magang Industri &amp; Kolaborasi Sistem</span>
+        </div>
         <h1>Mentransformasi Proses Bisnis Menjadi Arsitektur Sistem Informasi yang Terukur, Andal &amp; Siap Produksi.</h1>
         <p class="lead">
           Muhammad Sultan Hafidz Herawan — S1 Sistem Informasi, Fakultas Ilmu Komputer, Universitas Dian Nuswantoro (UDINUS) Semarang. Berfokus pada analisis sistem enterprise, rekayasa web modular, otomasi alur kerja, dan tata kelola data.
@@ -224,26 +231,26 @@
     <section id="sertifikasi" class="section certs-section">
       <div class="section-head">
         <h2>Kredensial &amp; Sertifikasi Profesional</h2>
-        <p>48 sertifikat profesional terverifikasi dari institusi global melalui Coursera, mencakup 5 program Spesialisasi tingkat lanjut dalam analitika data, audit sistem informasi, keamanan siber, dan arsitektur enterprise.</p>
+        <p>64 sertifikat profesional terverifikasi dari institusi global melalui Coursera, mencakup 8 program Spesialisasi tingkat lanjut dalam analitika data &amp; AI, audit sistem informasi, keamanan siber, arsitektur enterprise, dan pemasaran digital.</p>
       </div>
 
-      <!-- 5 Spesialisasi Utama -->
+      <!-- 8 Spesialisasi Utama -->
       <div class="spec-block">
-        <h3 class="spec-heading">Spesialisasi Profesional Terakreditasi</h3>
+        <h3 class="spec-heading">Spesialisasi Profesional Terakreditasi (8)</h3>
         <div id="spec-list" class="spec-grid"></div>
       </div>
 
       <!-- Filter & Seluruh Sertifikat -->
       <div class="all-certs-block">
         <div class="certs-toolbar">
-          <h3 class="spec-heading">Repositori Sertifikasi Terverifikasi (48)</h3>
+          <h3 class="spec-heading">Repositori Sertifikasi Terverifikasi (64)</h3>
           <div class="cert-filters" role="group" aria-label="Saring sertifikat per kategori">
-            <button type="button" data-cert-filter="semua" aria-pressed="true">Semua (48)</button>
-            <button type="button" data-cert-filter="spesialisasi" aria-pressed="false">Spesialisasi (5)</button>
-            <button type="button" data-cert-filter="data" aria-pressed="false">Data &amp; AI (21)</button>
+            <button type="button" data-cert-filter="semua" aria-pressed="true">Semua (64)</button>
+            <button type="button" data-cert-filter="spesialisasi" aria-pressed="false">Spesialisasi (8)</button>
+            <button type="button" data-cert-filter="data" aria-pressed="false">Data &amp; AI (35)</button>
             <button type="button" data-cert-filter="keamanan" aria-pressed="false">Keamanan &amp; Audit (16)</button>
             <button type="button" data-cert-filter="enterprise" aria-pressed="false">Enterprise (5)</button>
-            <button type="button" data-cert-filter="marketing" aria-pressed="false">Pemasaran Digital (6)</button>
+            <button type="button" data-cert-filter="marketing" aria-pressed="false">Pemasaran Digital (8)</button>
           </div>
         </div>
         <p class="cert-filter-status" aria-live="polite"></p>
@@ -255,7 +262,7 @@
 
         <div class="cert-more-action">
           <button id="cert-toggle-more" class="cert-more-btn" type="button" aria-expanded="false">
-            <span class="cert-more-text">Tampilkan Semua 48 Sertifikat</span>
+            <span class="cert-more-text">Tampilkan Semua 64 Sertifikat</span>
             <svg class="cert-more-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
@@ -360,6 +367,12 @@
     <p>Sistem Informasi, UDINUS Semarang</p>
   </footer>
 
-  <script src="script.js?v=20261016-v7"></script>
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="script.js?v=20261021-v8"></script>
 </body>
 </html>
