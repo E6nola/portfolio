@@ -1285,22 +1285,3 @@ a { color: var(--blue); }
   .entity:hover, .entity.is-hot { transform: translate(-2px, -2px); }
 }
 
-/* ==========================================================================
-   THEME VFX CANVAS & CONTROL-INSPIRED SFX TRANSITION
-   ========================================================================== */
-.theme-vfx-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 999999;
-  opacity: 0;
-  transition: opacity 0.1s ease;
-  display: block;
-}
-
-.theme-vfx-canvas.is-active {
-  opacity: 1;
-}
-
