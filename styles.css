@@ -216,23 +216,26 @@ a { color: var(--blue); }
 }
 .site-header.is-hidden {
   transform: translateY(-100%);
+  box-shadow: none;
 }
 
 /* ---------- scroll progress bar ---------- */
 .scroll-progress-container {
   position: absolute;
-  bottom: 0;
+  top: calc(100% + 1px);
   left: 0;
   width: 100%;
-  height: 2.5px;
+  height: 3px;
   background: transparent;
   pointer-events: none;
   overflow: hidden;
+  z-index: 101;
 }
 .scroll-progress-bar {
   height: 100%;
   width: 0%;
   background: linear-gradient(90deg, var(--blue) 0%, var(--gold) 100%);
+  box-shadow: 0 1px 4px rgba(33, 71, 184, 0.28);
   transition: width 0.08s ease-out;
 }
 
