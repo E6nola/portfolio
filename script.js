@@ -318,19 +318,109 @@ document.querySelectorAll("[data-count]").forEach((n) => {
   n.textContent = c + " proyek";
 });
 
-// ---------- filter ----------
+// ---------- project expand/collapse controller ----------
+const projectMoreAction = document.querySelector(".project-more-action");
+const projectToggleMore = document.getElementById("project-toggle-more");
+const projectMoreText = projectToggleMore ? projectToggleMore.querySelector(".project-more-text") : null;
+let isProjectExpanded = false;
+let currentProjectArea = "semua";
+const COMPACT_PROJECT_LIMIT = 3; // Menampilkan 3 proyek reguler (+ featured jika ada) pada mode ringkas
+
+function updateProjectToggleUI(totalMatching) {
+  if (!projectMoreAction || !projectToggleMore || !projectMoreText) return;
+
+  // Jika hasil filter <= 4 (misal saat menyaring per domain spesifik), semua muat tanpa perlu tombol extend
+  if (totalMatching <= 4) {
+    projectMoreAction.style.display = "none";
+    return;
+  }
+
+  projectMoreAction.style.display = "flex";
+  if (isProjectExpanded) {
+    projectMoreText.textContent = "Tampilkan Lebih Sedikit (Ringkas)";
+    projectToggleMore.setAttribute("aria-expanded", "true");
+  } else {
+    projectMoreText.textContent = `Tampilkan Seluruh ${totalMatching} Proyek`;
+    projectToggleMore.setAttribute("aria-expanded", "false");
+  }
+}
+
 function applyFilter(area) {
+  currentProjectArea = area;
   filterBtns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.filter === area)));
-  let shown = 0;
-  listEl.querySelectorAll("[data-area]").forEach((item) => {
-    const show = area === "semua" || item.dataset.area === area;
-    item.hidden = !show;
-    if (show) shown++;
+
+  const allItems = Array.from(listEl.querySelectorAll("[data-area]"));
+  const matchingItems = allItems.filter(
+    (item) => area === "semua" || item.dataset.area === area
+  );
+
+  let regularCount = 0;
+  let actuallyShown = 0;
+
+  allItems.forEach((item) => {
+    const matches = area === "semua" || item.dataset.area === area;
+    if (!matches) {
+      item.hidden = true;
+      item.style.display = "none";
+      item.classList.remove("is-revealed");
+      return;
+    }
+
+    const isFeatured = item.classList.contains("featured");
+    let shouldShow = false;
+
+    if (isFeatured) {
+      shouldShow = true;
+    } else {
+      regularCount++;
+      if (isProjectExpanded || matchingItems.length <= 4 || regularCount <= COMPACT_PROJECT_LIMIT) {
+        shouldShow = true;
+      } else {
+        shouldShow = false;
+      }
+    }
+
+    item.hidden = !shouldShow;
+    item.style.display = shouldShow ? "" : "none";
+    if (shouldShow) actuallyShown++;
   });
-  statusEl.textContent =
-    area === "semua"
-      ? `Menampilkan seluruh ${shown} portofolio proyek rekayasa.`
-      : `Menampilkan ${shown} proyek dalam domain ${AREA_LABEL[area]}.`;
+
+  updateProjectToggleUI(matchingItems.length);
+
+  if (statusEl) {
+    if (area === "semua") {
+      statusEl.textContent = isProjectExpanded
+        ? `Menampilkan seluruh ${matchingItems.length} portofolio proyek rekayasa.`
+        : `Menampilkan ${actuallyShown} dari ${matchingItems.length} portofolio proyek rekayasa (tampilan ringkas).`;
+    } else {
+      statusEl.textContent = isProjectExpanded || matchingItems.length <= 4
+        ? `Menampilkan seluruh ${matchingItems.length} proyek dalam domain ${AREA_LABEL[area]}.`
+        : `Menampilkan ${actuallyShown} dari ${matchingItems.length} proyek dalam domain ${AREA_LABEL[area]} (tampilan ringkas).`;
+    }
+  }
+}
+
+if (projectToggleMore) {
+  projectToggleMore.addEventListener("click", () => {
+    isProjectExpanded = !isProjectExpanded;
+    applyFilter(currentProjectArea);
+
+    if (isProjectExpanded) {
+      const visibleProjects = listEl.querySelectorAll(".project:not([hidden])");
+      visibleProjects.forEach((p, idx) => {
+        if (idx >= COMPACT_PROJECT_LIMIT) {
+          p.classList.remove("is-revealed");
+          void p.offsetWidth; // force reflow
+          p.classList.add("is-revealed");
+        }
+      });
+    } else {
+      const proyekSection = document.getElementById("proyek");
+      if (proyekSection) {
+        proyekSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  });
 }
 
 filterBtns.forEach((b) => b.addEventListener("click", () => applyFilter(b.dataset.filter)));
